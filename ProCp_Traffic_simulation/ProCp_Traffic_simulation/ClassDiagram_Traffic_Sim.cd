@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ProCp_Traffic_simulation.Form1" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAQABAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FileHelper" />
+      <Property Name="Simulation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.Lane">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACACEAAAgQAICACAEAAAAAgAgAAIQAAAAABAAAABAA=</HashCode>
+      <FileName>Lane.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Car" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.Car">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAIAQAQCAAIAARAAAQASCAIAAAAAAAAAE=</HashCode>
+      <FileName>Car.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Direction" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.TrafficLight">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAABEAAAEAAIAAAAAIAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>TrafficLight.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LightColor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.Crossing">
+    <Position X="1.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAABAAAAAAAAAAAAEEwAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Crossing.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Groups" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.Group">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAABAgAAAIAAAgAAAAAEAAAQAQAAAAAAACA=</HashCode>
+      <FileName>Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TrafficLight" />
+      <Property Name="Lane" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.Simulation">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACIABAAAAAAAAAAAAAAAAAAgIAAAAAAEAAA=</HashCode>
+      <FileName>Simulation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Crossing" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ProCp_Traffic_simulation.FileHelper">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ProCp_Traffic_simulation.LightColor">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>LightColor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ProCp_Traffic_simulation.Direction">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
