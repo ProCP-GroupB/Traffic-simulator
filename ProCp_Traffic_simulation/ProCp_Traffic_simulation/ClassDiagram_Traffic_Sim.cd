@@ -3,7 +3,11 @@
   <Class Name="ProCp_Traffic_simulation.Form1">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
       <HashCode>GBIAAQQABP4zBBAAAADACAACAsAQEAABkAQABO+wACA=</HashCode>
+=======
+      <HashCode>GBIAAQQABf4zBBAAAADACAACAsAQEAABgAQABO+wAAA=</HashCode>
+>>>>>>> origin/master
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -32,14 +36,11 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ProCp_Traffic_simulation.TrafficLight">
-    <Position X="6.5" Y="4.75" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAABEAAAEAAIAAAAAIAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEQAQEAAAAAAAAYAAAAAAQBhAAAAAAA=</HashCode>
       <FileName>TrafficLight.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="LightColor" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ProCp_Traffic_simulation.Crossing">
     <Position X="2" Y="3.75" Width="1.5" />

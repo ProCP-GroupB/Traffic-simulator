@@ -52,6 +52,13 @@ namespace ProCp_Traffic_simulation
             }
         }
 
+        public Group(string Name)
+        {
+            this.name = Name;
+            listOfLanes = new List<Lane>();
+            listOfLights = new List<TrafficLight>();
+        }
+
         /// <summary>
         /// Adds the passed lane to the list
         /// </summary>
