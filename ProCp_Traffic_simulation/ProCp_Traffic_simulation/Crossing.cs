@@ -10,6 +10,7 @@ namespace ProCp_Traffic_simulation
 {
     public class Crossing
     {
+        private int crossingNumber = 0;
         private Image image;
         private Point[] turningPoints;
         private int nrOfCars;
@@ -28,11 +29,16 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         /// 
 
-        public Crossing(Image image, Point[] point)
+        public Crossing(Image image, int CrossingNumber)
         {
+            this.crossingNumber = CrossingNumber;
             Image = image;
+<<<<<<< HEAD
             Turningpoints = point;
             NrOfCars = 0;
+=======
+            nrOfCars = 0;
+>>>>>>> origin/master
         }
         ~Crossing()
         {
@@ -54,6 +60,7 @@ namespace ProCp_Traffic_simulation
         /// Triggers the event to change the traffic light
         /// </summary>
         public void ChangeTrafficLight(EventArgs e)
+<<<<<<< HEAD
         {
             LightColor value = LightColor.Red;
             if (value==LightColor.Red)
@@ -68,6 +75,9 @@ namespace ProCp_Traffic_simulation
             }
 
 
+=======
+        {       
+>>>>>>> origin/master
         }
 
         /// <summary>

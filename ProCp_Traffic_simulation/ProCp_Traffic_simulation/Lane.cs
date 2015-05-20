@@ -32,6 +32,16 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         private bool isFeeder;
 
+        public Lane(int laneID, int direction, Point startPoint, Point endPoint, Point stopPoint, int speed)
+        {
+            this.laneID = laneID;
+            this.direction = direction;
+            this.startPoint = startPoint;
+            this.endPoint = endPoint;
+            this.stopPoint = stopPoint;
+            this.speed = speed;
+        }
+
         public Car Car
         {
             get
@@ -48,11 +58,16 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void AddCar()
         {
+<<<<<<< HEAD
              
             {
                 Car car = new Car();
                 listOfCars.Add(car);
             }
+=======
+            listOfCars.Add(Car);
+
+>>>>>>> origin/master
         }
 
         /// <summary>
@@ -76,12 +91,16 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void RemoveCar()
         {
+<<<<<<< HEAD
             
             foreach (Car car in listOfCars)
             {
                 listOfCars.Remove(car);  
             }
            
+=======
+            listOfCars.Remove(Car);
+>>>>>>> origin/master
         }
 
         /// <summary>

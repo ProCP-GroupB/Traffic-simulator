@@ -12,7 +12,7 @@ namespace ProCp_Traffic_simulation
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -201,6 +201,25 @@ namespace ProCp_Traffic_simulation
         private void tbTraffic_Scroll(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            //foreach (var pictureBox in Controls.OfType<PictureBox>())
+            //{
+            //    if (pictureBox.Tag == null) // you can skip other pictureBoxes
+            //        continue;
+            //    List<Crossing> c = new List<Crossing>();// (pictureBox.Image);
+            //    c.Add(pictureBox.Image);
+            //    Simulation.AddCrossing(c);
+             
+            //}
+            //if (Simulation.simulationRunning = false)
+            //{
+            //    Simulation.Start();
+            //}
+            //else
+            //    MessageBox.Show("Simulation is running");
         }
 
 
