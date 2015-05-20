@@ -13,6 +13,11 @@ namespace ProCp_Traffic_simulation
         private Image image;
         private Point[] turningPoints;
         private int nrOfCars;
+        Group group;
+        LightColor light;
+        TrafficLight trafficlight;
+
+        private List<Car> carsturning = new List<Car>();
         
         public Image Image{get;set;}
         public Point[] Turningpoints{get;set;}
@@ -27,7 +32,7 @@ namespace ProCp_Traffic_simulation
         {
             Image = image;
             Turningpoints = point;
-            nrOfCars = 0;
+            NrOfCars = 0;
         }
         ~Crossing()
         {
@@ -50,8 +55,17 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void ChangeTrafficLight(EventArgs e)
         {
-            Group group=new Group();
-            group.ChangeLight += ;
+            LightColor value = LightColor.Red;
+            if (value==LightColor.Red)
+            {
+
+                trafficlight.paintgreen();
+          
+            }
+            else
+            {
+                trafficlight.painttoRed();
+            }
 
 
         }
@@ -78,7 +92,10 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void CarsToTurn()
         {
-            throw new System.NotImplementedException();
+            foreach (Car car in carsturning)
+            {
+                
+            }
         }
     }
 }

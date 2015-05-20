@@ -13,6 +13,7 @@ namespace ProCp_Traffic_simulation
         int x, y, width, height;
         private Rectangle lights;
         SolidBrush b;
+        LightColor light;
 
         
         public TrafficLight(int x, int y, int width, int height, int GreenTime, Rectangle[] Lights)
@@ -31,11 +32,13 @@ namespace ProCp_Traffic_simulation
         public void painttoRed()
         {
             this.b = new SolidBrush(Color.Red);
+            light=LightColor.Red;
         }
         
         public void paintgreen()
         {
             this.b = new SolidBrush(Color.Green);
+            light = LightColor.Green;
         }
 
 

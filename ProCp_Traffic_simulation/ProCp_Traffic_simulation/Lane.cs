@@ -48,7 +48,11 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void AddCar()
         {
-            throw new System.NotImplementedException();
+             
+            {
+                Car car = new Car();
+                listOfCars.Add(car);
+            }
         }
 
         /// <summary>
@@ -72,7 +76,12 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void RemoveCar()
         {
-            throw new System.NotImplementedException();
+            
+            foreach (Car car in listOfCars)
+            {
+                listOfCars.Remove(car);  
+            }
+           
         }
 
         /// <summary>
