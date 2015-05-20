@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ProCp_Traffic_simulation
 {
+   
     public enum LightColor
     {
         Red = 0,

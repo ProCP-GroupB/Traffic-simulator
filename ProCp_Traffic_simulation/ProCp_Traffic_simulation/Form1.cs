@@ -198,6 +198,11 @@ namespace ProCp_Traffic_simulation
             frm.Show();
         }
 
+        private void tbTraffic_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

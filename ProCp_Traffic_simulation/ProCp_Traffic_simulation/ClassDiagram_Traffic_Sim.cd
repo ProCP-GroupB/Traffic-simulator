@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="ProCp_Traffic_simulation.Form1" Collapsed="true">
+  <Class Name="ProCp_Traffic_simulation.Form1">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAQABAAAAAA=</HashCode>
+      <HashCode>GBIAAQQABP4zBBAAAADACAACAsAQEAABkAQABO+wACA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -42,9 +42,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ProCp_Traffic_simulation.Crossing">
-    <Position X="1.25" Y="3.75" Width="1.5" />
+    <Position X="2" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAABAAAAAAAAAAAAEEwAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAEAAAAABAAAAAAAAQAAAEEwAABAAAAAAACAAAAE=</HashCode>
       <FileName>Crossing.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -54,7 +54,7 @@
   <Class Name="ProCp_Traffic_simulation.Group">
     <Position X="3.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAABAgAAAIAAAgAAAAAEAAAQAQAAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAABAgAAAIAAAgAAAAAEAAAQAQQAgAAAACA=</HashCode>
       <FileName>Group.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -73,7 +73,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ProCp_Traffic_simulation.FileHelper">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="10.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FileHelper.cs</FileName>

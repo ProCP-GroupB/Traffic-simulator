@@ -14,7 +14,16 @@ namespace ProCp_Traffic_simulation
         /// <summary>
         /// Stops the cars and changes the state of the Traffic Lights
         /// </summary>
-        public event EventHandler onChangeLight;
+        public event EventHandler ChangeLight;
+         protected virtual void onChangeLight(EventArgs e)
+        {
+
+            EventHandler handler = ChangeLight;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
 
         /// <summary>
         /// Triggered when CarsToTurn() is called and calls the Turn() for each car object
@@ -46,7 +55,7 @@ namespace ProCp_Traffic_simulation
         /// <summary>
         /// Adds the passed lane to the list
         /// </summary>
-        public void AddLane()
+        public void t()
         {
             throw new System.NotImplementedException();
         }
