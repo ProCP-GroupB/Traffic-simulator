@@ -8,19 +8,10 @@ namespace ProCp_Traffic_simulation
 {
     public class Simulation
     {
+        public bool simulationRunning;
         private Timer timer;
         private PictureBox[] grid;
-
-        public Crossing Crossing
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        List<Crossing> crossings = new List<Crossing>();
 
         /// <summary>
         /// Starts the simulation
@@ -38,7 +29,7 @@ namespace ProCp_Traffic_simulation
             throw new System.NotImplementedException();
         }
 
-        public void AddCrossing()
+        public void AddCrossing(Crossing c)
         {
             throw new System.NotImplementedException();
         }

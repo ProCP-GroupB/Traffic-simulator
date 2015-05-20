@@ -1,1 +1,2 @@
 C:\STUDY 2\BLOCK 4\ProCpRepository\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe.config
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe.config
