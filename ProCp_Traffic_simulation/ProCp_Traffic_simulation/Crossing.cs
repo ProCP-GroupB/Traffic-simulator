@@ -49,11 +49,7 @@ namespace ProCp_Traffic_simulation
         /// Triggers the event to change the traffic light
         /// </summary>
         public void ChangeTrafficLight(EventArgs e)
-        {
-            Group group=new Group();
-            group.ChangeLight += ;
-
-
+        {       
         }
 
         /// <summary>
