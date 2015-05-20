@@ -8,36 +8,43 @@ namespace ProCp_Traffic_simulation
 {
     public class TrafficLight
     {
-        private Point position;
-        private LightColor color;
+        //private Point position;
         private int greenTime;
-        private Rectangle[] lights;
+        int x, y, width, height;
+        private Rectangle lights;
+        SolidBrush b;
 
-        public LightColor LightColor
+        
+        public TrafficLight(int x, int y, int width, int height, int GreenTime, Rectangle[] Lights)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            this.x = x;
+            this.y = y;
+            this.height = height;
+            this.width = width;
+            this.greenTime = GreenTime;
+            b = new SolidBrush(Color.Red);
+            this.lights = new Rectangle(x, y, width, height);
         }
-
         /// <summary>
         /// Changes the color of the light
         /// </summary>
-        public void ChangeState()
+        public void painttoRed()
         {
-            throw new System.NotImplementedException();
+            this.b = new SolidBrush(Color.Red);
         }
+        
+        public void paintgreen()
+        {
+            this.b = new SolidBrush(Color.Green);
+        }
+
 
         /// <summary>
         /// Sets a new value to the 'greenTime'  variable
         /// </summary>
-        public void ChangeGreenTime()
+        public void ChangeGreenTime( int GreenTime)
         {
-            throw new System.NotImplementedException();
+            this.greenTime = GreenTime;
         }
     }
 }

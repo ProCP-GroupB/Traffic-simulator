@@ -8,6 +8,6 @@ namespace ProCp_Traffic_simulation
     public enum LightColor
     {
         Red = 0,
-        Green = 1,
+        Green = 1
     }
 }
