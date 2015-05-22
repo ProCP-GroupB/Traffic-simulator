@@ -58,16 +58,16 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void AddCar()
         {
-<<<<<<< HEAD
+
              
             {
-                Car car = new Car();
-                listOfCars.Add(car);
+                //Car car = new Car();
+                //listOfCars.Add(car);
             }
-=======
+
             listOfCars.Add(Car);
 
->>>>>>> origin/master
+
         }
 
         /// <summary>
@@ -91,16 +91,16 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void RemoveCar()
         {
-<<<<<<< HEAD
+
             
             foreach (Car car in listOfCars)
             {
                 listOfCars.Remove(car);  
             }
            
-=======
+
             listOfCars.Remove(Car);
->>>>>>> origin/master
+
         }
 
         /// <summary>

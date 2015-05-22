@@ -10,3 +10,14 @@ C:\STUDY 2\BLOCK 4\ProCpRepository\Traffic-simulator\ProCp_Traffic_simulation\Pr
 C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe.config
 >>>>>>> origin/master
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe.config
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.csprojResolveAssemblyReference.cache
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Form1.resources
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Form2.resources
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Properties.Resources.resources
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.csproj.GenerateResource.Cache
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\Crossings\Crossing1.png
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\Crossings\Crossing2.png
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.pdb
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.exe
+D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.pdb

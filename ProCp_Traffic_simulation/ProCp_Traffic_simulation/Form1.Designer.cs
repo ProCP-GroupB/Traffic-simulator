@@ -85,9 +85,9 @@
             this.gbGrid.Controls.Add(this.pbTile7);
             this.gbGrid.Controls.Add(this.pbTile1);
             this.gbGrid.Location = new System.Drawing.Point(4, 136);
-            this.gbGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGrid.Margin = new System.Windows.Forms.Padding(2);
             this.gbGrid.Name = "gbGrid";
-            this.gbGrid.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGrid.Padding = new System.Windows.Forms.Padding(2);
             this.gbGrid.Size = new System.Drawing.Size(1164, 434);
             this.gbGrid.TabIndex = 0;
             this.gbGrid.TabStop = false;
@@ -97,7 +97,7 @@
             // 
             this.pbTile2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile2.Location = new System.Drawing.Point(187, 17);
-            this.pbTile2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile2.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile2.Name = "pbTile2";
             this.pbTile2.Size = new System.Drawing.Size(150, 150);
             this.pbTile2.TabIndex = 11;
@@ -108,7 +108,7 @@
             // 
             this.pbTile3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile3.Location = new System.Drawing.Point(350, 17);
-            this.pbTile3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile3.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile3.Name = "pbTile3";
             this.pbTile3.Size = new System.Drawing.Size(150, 150);
             this.pbTile3.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             this.pbTile4.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile4.Location = new System.Drawing.Point(677, 17);
-            this.pbTile4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile4.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile4.Name = "pbTile4";
             this.pbTile4.Size = new System.Drawing.Size(150, 150);
             this.pbTile4.TabIndex = 9;
@@ -130,7 +130,7 @@
             // 
             this.pbTile12.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile12.Location = new System.Drawing.Point(843, 245);
-            this.pbTile12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile12.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile12.Name = "pbTile12";
             this.pbTile12.Size = new System.Drawing.Size(150, 150);
             this.pbTile12.TabIndex = 8;
@@ -141,7 +141,7 @@
             // 
             this.pbTile5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile5.Location = new System.Drawing.Point(187, 245);
-            this.pbTile5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile5.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile5.Name = "pbTile5";
             this.pbTile5.Size = new System.Drawing.Size(150, 150);
             this.pbTile5.TabIndex = 7;
@@ -152,7 +152,7 @@
             // 
             this.pbTile6.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile6.Location = new System.Drawing.Point(843, 17);
-            this.pbTile6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile6.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile6.Name = "pbTile6";
             this.pbTile6.Size = new System.Drawing.Size(150, 150);
             this.pbTile6.TabIndex = 6;
@@ -163,7 +163,7 @@
             // 
             this.pbTile8.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile8.Location = new System.Drawing.Point(513, 17);
-            this.pbTile8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile8.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile8.Name = "pbTile8";
             this.pbTile8.Size = new System.Drawing.Size(150, 150);
             this.pbTile8.TabIndex = 5;
@@ -174,7 +174,7 @@
             // 
             this.pbTile11.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile11.Location = new System.Drawing.Point(513, 245);
-            this.pbTile11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile11.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile11.Name = "pbTile11";
             this.pbTile11.Size = new System.Drawing.Size(150, 150);
             this.pbTile11.TabIndex = 4;
@@ -185,7 +185,7 @@
             // 
             this.pbTile9.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile9.Location = new System.Drawing.Point(24, 245);
-            this.pbTile9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile9.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile9.Name = "pbTile9";
             this.pbTile9.Size = new System.Drawing.Size(150, 150);
             this.pbTile9.TabIndex = 3;
@@ -196,7 +196,7 @@
             // 
             this.pbTile10.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile10.Location = new System.Drawing.Point(350, 245);
-            this.pbTile10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile10.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile10.Name = "pbTile10";
             this.pbTile10.Size = new System.Drawing.Size(150, 150);
             this.pbTile10.TabIndex = 2;
@@ -207,7 +207,7 @@
             // 
             this.pbTile7.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile7.Location = new System.Drawing.Point(677, 245);
-            this.pbTile7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile7.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile7.Name = "pbTile7";
             this.pbTile7.Size = new System.Drawing.Size(150, 150);
             this.pbTile7.TabIndex = 1;
@@ -218,7 +218,7 @@
             // 
             this.pbTile1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbTile1.Location = new System.Drawing.Point(24, 17);
-            this.pbTile1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTile1.Margin = new System.Windows.Forms.Padding(2);
             this.pbTile1.Name = "pbTile1";
             this.pbTile1.Size = new System.Drawing.Size(150, 150);
             this.pbTile1.TabIndex = 0;
@@ -228,7 +228,7 @@
             // buttonStart
             // 
             this.buttonStart.Location = new System.Drawing.Point(230, 85);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(97, 46);
             this.buttonStart.TabIndex = 1;
@@ -239,7 +239,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(661, 85);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 46);
             this.button2.TabIndex = 2;
@@ -254,9 +254,9 @@
             this.gbTraffic.Controls.Add(this.lbTraffic);
             this.gbTraffic.Controls.Add(this.lbComponents);
             this.gbTraffic.Location = new System.Drawing.Point(230, 2);
-            this.gbTraffic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTraffic.Margin = new System.Windows.Forms.Padding(2);
             this.gbTraffic.Name = "gbTraffic";
-            this.gbTraffic.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbTraffic.Padding = new System.Windows.Forms.Padding(2);
             this.gbTraffic.Size = new System.Drawing.Size(536, 78);
             this.gbTraffic.TabIndex = 3;
             this.gbTraffic.TabStop = false;
@@ -265,7 +265,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(252, 40);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(56, 20);
             this.textBox1.TabIndex = 3;
@@ -273,12 +273,13 @@
             // btnCrossings
             // 
             this.btnCrossings.Location = new System.Drawing.Point(93, 32);
-            this.btnCrossings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrossings.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrossings.Name = "btnCrossings";
             this.btnCrossings.Size = new System.Drawing.Size(88, 29);
             this.btnCrossings.TabIndex = 2;
             this.btnCrossings.Text = "Crossings";
             this.btnCrossings.UseVisualStyleBackColor = true;
+            this.btnCrossings.Click += new System.EventHandler(this.btnCrossings_Click);
             // 
             // lbTraffic
             // 
@@ -304,7 +305,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(968, 10);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 29);
             this.btnSave.TabIndex = 4;
@@ -314,7 +315,7 @@
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(1070, 10);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(98, 29);
             this.btnLoad.TabIndex = 5;
@@ -324,7 +325,7 @@
             // btnRemoveCrossing
             // 
             this.btnRemoveCrossing.Location = new System.Drawing.Point(1017, 44);
-            this.btnRemoveCrossing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveCrossing.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveCrossing.Name = "btnRemoveCrossing";
             this.btnRemoveCrossing.Size = new System.Drawing.Size(98, 29);
             this.btnRemoveCrossing.TabIndex = 6;

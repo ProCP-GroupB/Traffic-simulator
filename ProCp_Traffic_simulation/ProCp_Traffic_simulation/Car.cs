@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Threading;
 
 namespace ProCp_Traffic_simulation
 {
@@ -14,21 +15,32 @@ namespace ProCp_Traffic_simulation
         private int speed;
         private int height;
         private int width;
-        /// <summary>
-        /// Keeps track of all cars
-        /// </summary>
-        private static List<Car> carsInFront;
+        // Critical section borders
+        private int minXcs = 52;
+        private int maxXcs = 97;
+
+        private List<Car> carsInFront;
         private Direction direction;
+
+        public Rectangle rect;
+        public bool toStop = false;
 
         public Direction Direction
         {
             get
             {
-                throw new System.NotImplementedException();
+                return direction;
             }
             set
             {
+                direction = value;
             }
+        }
+
+        public Car(Direction direct, Rectangle rectangle)
+        {
+            Direction = direct;
+            rect = rectangle;
         }
 
         /// <summary>
@@ -44,7 +56,23 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void Move()
         {
-            throw new System.NotImplementedException();
+            switch (direction.ToString().ToLower())
+            {
+                case "west":
+                    while (rect.X <= minXcs)
+                    {
+                        rect.X += 1;
+                        Thread.Sleep(101);
+                    }
+                    toStop = true;
+                    break;
+                case "east":
+                    while (rect.X >= maxXcs)
+                    {
+                        rect.X -= 5;
+                    }
+                    break;
+            }
         }
 
         /// <summary>
