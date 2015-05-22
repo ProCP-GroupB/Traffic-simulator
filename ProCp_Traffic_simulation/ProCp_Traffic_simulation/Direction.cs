@@ -7,8 +7,9 @@ namespace ProCp_Traffic_simulation
 {
     public enum Direction
     {
-        Forward,
-        Left,
-        Right,
+        North,
+        South,
+        East,
+        West,
     }
 }
