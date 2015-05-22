@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbGrid = new System.Windows.Forms.GroupBox();
             this.pbTile2 = new System.Windows.Forms.PictureBox();
             this.pbTile3 = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@
             this.btnRemoveCrossing = new System.Windows.Forms.Button();
             this.lbTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.timerTest = new System.Windows.Forms.Timer(this.components);
             this.gbGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTile2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTile3)).BeginInit();
@@ -352,6 +354,11 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "00 : 00";
             // 
+            // timerTest
+            // 
+            this.timerTest.Interval = 50;
+            this.timerTest.Tick += new System.EventHandler(this.timerTest_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +423,7 @@
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer timerTest;
     }
 }
 

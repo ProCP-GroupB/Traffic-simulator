@@ -7,15 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ProCp_Traffic_simulation
 {
     public partial class Form1 : Form
     {
+        Bitmap DrawArea;
+        Rectangle myRect;
+        Car myCar;
+        Thread carTest;
+        Graphics gr;
 
         public Form1()
         {
             InitializeComponent();
+
+            DrawArea = new Bitmap(pbTile1.Size.Width, pbTile1.Size.Height);
+            pbTile1.Image = DrawArea;
+            
         }
 
         public FileHelper FileHelper
@@ -50,8 +60,8 @@ namespace ProCp_Traffic_simulation
             switch (pbNumber)
             {
                 case 1:
-                    if(picture == 1) this.pbTile1.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile1.ImageLocation = "Crossings/Crossing2.png";
+                    if(picture == 1) this.pbTile1.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile1.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;       
                     break;
                 case 2:
                     if (picture == 1) this.pbTile2.ImageLocation = "Crossings/Crossing1.png";
@@ -220,11 +230,35 @@ namespace ProCp_Traffic_simulation
             //}
             //else
             //    MessageBox.Show("Simulation is running");
+
+
+            //TESTING CAR MOVEMENT
+            myRect = new Rectangle(8, 77, 8, 8);
+            myCar = new Car(Direction.West, myRect);
+            timerTest.Start();
+            ThreadStart thRef = new ThreadStart(myCar.Move);
+            carTest = new Thread(thRef);
+
+            carTest.Start();
         }
 
         private void btnCrossings_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timerTest_Tick(object sender, EventArgs e)
+        {
+            if (!myCar.toStop)
+            {
+                gr = Graphics.FromImage(DrawArea);
+                gr.Clear(Color.Transparent);
+                gr = Graphics.FromImage(DrawArea);
+                //gr.DrawEllipse(Brushes.Black, );
+                gr.FillEllipse(Brushes.Black, myCar.rect);
+
+                pbTile1.Invalidate();
+            }
         }
 
 

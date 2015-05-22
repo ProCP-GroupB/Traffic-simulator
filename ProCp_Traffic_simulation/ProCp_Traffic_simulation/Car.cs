@@ -62,7 +62,7 @@ namespace ProCp_Traffic_simulation
                     while (rect.X <= minXcs)
                     {
                         rect.X += 1;
-                        Thread.Sleep(101);
+                        Thread.Sleep(51);
                     }
                     toStop = true;
                     break;
