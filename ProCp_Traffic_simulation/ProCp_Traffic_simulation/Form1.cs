@@ -14,18 +14,21 @@ namespace ProCp_Traffic_simulation
     public partial class Form1 : Form
     {
         Bitmap DrawArea;
+        List<Bitmap> drawArea = new List<Bitmap>();
         Rectangle myRect;
         Car myCar;
         Thread carTest;
         Graphics gr;
+        List<PictureBox> activatedpb;
+        Simulation simulation;
 
         public Form1()
         {
             InitializeComponent();
 
             DrawArea = new Bitmap(pbTile1.Size.Width, pbTile1.Size.Height);
-            pbTile1.Image = DrawArea;
-            
+           // pbTile1.Image = DrawArea;
+            activatedpb = new List<PictureBox>();
         }
 
         public FileHelper FileHelper
@@ -61,51 +64,63 @@ namespace ProCp_Traffic_simulation
             {
                 case 1:
                     if(picture == 1) this.pbTile1.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
-                    else this.pbTile1.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;       
+                    else this.pbTile1.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile1);
                     break;
                 case 2:
-                    if (picture == 1) this.pbTile2.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile2.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile2.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    else this.pbTile2.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile2);
                     break;
                 case 3:
-                    if (picture == 1) this.pbTile3.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile3.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile3.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile3.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile3);
                     break;
                 case 4:
-                    if (picture == 1) this.pbTile4.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile4.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile4.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile4.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile4);
                     break;
                 case 5:
-                    if (picture == 1) this.pbTile5.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile5.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile5.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile5.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile5);
                     break;
                 case 6:
-                    if (picture == 1) this.pbTile6.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile6.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile6.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile6.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile6);
                     break;
                 case 7:
-                    if (picture == 1) this.pbTile7.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile7.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile7.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile7.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile7);
                     break;
                 case 8:
-                    if (picture == 1) this.pbTile8.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile8.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile8.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile8);
                     break;
                 case 9:
-                    if (picture == 1) this.pbTile9.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile9.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile9.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile9.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile9);
                     break;
                 case 10:
-                    if (picture == 1) this.pbTile10.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile10.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile10.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile10.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile10);
                     break;
                 case 11:
-                    if (picture == 1) this.pbTile11.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile11.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile11.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile11.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile11);
                     break;
                 case 12:
-                    if (picture == 1) this.pbTile12.ImageLocation = "Crossings/Crossing1.png";
-                    else this.pbTile12.ImageLocation = "Crossings/Crossing2.png";
+                    if (picture == 1) this.pbTile12.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    else this.pbTile12.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    activatedpb.Add(pbTile12);
                     break;
                 default:
                     MessageBox.Show("Something went wrong");
@@ -215,31 +230,32 @@ namespace ProCp_Traffic_simulation
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            //foreach (var pictureBox in Controls.OfType<PictureBox>())
-            //{
-            //    if (pictureBox.Tag == null) // you can skip other pictureBoxes
-            //        continue;
-            //    List<Crossing> c = new List<Crossing>();// (pictureBox.Image);
-            //    c.Add(pictureBox.Image);
-            //    Simulation.AddCrossing(c);
-             
-            //}
-            //if (Simulation.simulationRunning = false)
-            //{
-            //    Simulation.Start();
-            //}
-            //else
-            //    MessageBox.Show("Simulation is running");
+            foreach (PictureBox p in activatedpb)
+            {
+                p.Image = DrawArea;
+                //DrawArea = new Bitmap(p.Size.Width, p.Size.Height);
+                //drawArea.Add(DrawArea);
+
+                simulation = new Simulation();
+                Crossing crossing = new Crossing(p.BackgroundImage);
+                simulation.AddCrossing(crossing);
+                myRect = new Rectangle(8, 77, 8, 8);
+                myCar = new Car(Direction.West, myRect);
+                timerTest.Start();
+                ThreadStart thRef = new ThreadStart(myCar.Move);
+                carTest = new Thread(thRef);
+
+                carTest.Start();
+            }
+            if (simulation.simulationRunning == false)
+            {
+                simulation.Start();
+            }
+            else
+                MessageBox.Show("Simulation is running");
 
 
             //TESTING CAR MOVEMENT
-            myRect = new Rectangle(8, 77, 8, 8);
-            myCar = new Car(Direction.West, myRect);
-            timerTest.Start();
-            ThreadStart thRef = new ThreadStart(myCar.Move);
-            carTest = new Thread(thRef);
-
-            carTest.Start();
         }
 
         private void btnCrossings_Click(object sender, EventArgs e)
@@ -251,13 +267,17 @@ namespace ProCp_Traffic_simulation
         {
             if (!myCar.toStop)
             {
+
                 gr = Graphics.FromImage(DrawArea);
                 gr.Clear(Color.Transparent);
                 gr = Graphics.FromImage(DrawArea);
                 //gr.DrawEllipse(Brushes.Black, );
                 gr.FillEllipse(Brushes.Black, myCar.rect);
 
-                pbTile1.Invalidate();
+          foreach (PictureBox p in activatedpb)
+                {
+                p.Invalidate();
+                }
             }
         }
 
