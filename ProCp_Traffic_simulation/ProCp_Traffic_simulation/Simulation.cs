@@ -18,7 +18,7 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void Start()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace ProCp_Traffic_simulation
 
         public void AddCrossing(Crossing c)
         {
-            throw new System.NotImplementedException();
+           
         }
 
         public void RemoveCrossing()

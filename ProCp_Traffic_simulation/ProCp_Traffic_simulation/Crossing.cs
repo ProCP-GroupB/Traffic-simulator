@@ -10,7 +10,7 @@ namespace ProCp_Traffic_simulation
 {
     public class Crossing
     {
-        private int crossingNumber = 0;
+      //  private int crossingNumber = 0;
         private Image image;
         private Point[] turningPoints;
         private int nrOfCars;
@@ -29,9 +29,9 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         /// 
 
-        public Crossing(Image image, int CrossingNumber)
+        public Crossing(Image image)
         {
-            this.crossingNumber = CrossingNumber;
+           // this.crossingNumber = CrossingNumber;
             Image = image;
 
             //Turningpoints = point;
@@ -40,10 +40,7 @@ namespace ProCp_Traffic_simulation
             nrOfCars = 0;
 
         }
-        ~Crossing()
-        {
-            throw new System.NotImplementedException();
-        }
+
     
         public Group Groups
         {
