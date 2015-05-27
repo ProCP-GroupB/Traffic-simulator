@@ -18,7 +18,8 @@ namespace ProCp_Traffic_simulation
         // Critical section borders
         private int minXcs = 52;
         private int maxXcs = 97;
-
+        private int minYcs = 34;
+        private int maxYcs = 170;
         private List<Car> carsInFront;
         private Direction direction;
 
@@ -63,13 +64,31 @@ namespace ProCp_Traffic_simulation
                     {
                         rect.X += 1;
                         Thread.Sleep(51);
+                       
                     }
                     toStop = true;
+                    ChangeDirection();
                     break;
                 case "east":
                     while (rect.X >= maxXcs)
                     {
                         rect.X -= 5;
+                        Thread.Sleep(51);
+                        
+                    }
+                    break;
+                case "south":
+                    while (rect.Y <= maxYcs)
+                    {
+                        rect.Y += 1;
+                        Thread.Sleep(51);
+                    }
+                    break;
+                case "north":
+                    while (rect.Y <= minYcs)
+                    {
+                        rect.Y -= 5;
+                        Thread.Sleep(51);
                     }
                     break;
             }
@@ -94,7 +113,11 @@ namespace ProCp_Traffic_simulation
 
         public void ChangeDirection()
         {
-            throw new System.NotImplementedException();
+            toStop = false;
+            direction = Direction.South;
+           rect = new Rectangle(55,77,8,8);
+            Move();
+          
         }
     }
 }

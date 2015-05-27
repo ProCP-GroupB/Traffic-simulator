@@ -18,7 +18,9 @@ namespace ProCp_Traffic_simulation
         List<Bitmap> drawArea = new List<Bitmap>();
         Rectangle myRect;
         Car myCar;
+        private Car myCar2;
         Thread carTest;
+        
         Graphics gr;
         List<PictureBox> activatedpb;
         Simulation simulation;
@@ -231,10 +233,29 @@ namespace ProCp_Traffic_simulation
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
+<<<<<<< Updated upstream
         {
        
             stopWatch.Start();
          
+=======
+        {
+            //foreach (var pictureBox in Controls.OfType<PictureBox>())
+            //{
+            //    if (pictureBox.Tag == null) // you can skip other pictureBoxes
+            //        continue;
+            //    List<Crossing> c = new List<Crossing>();// (pictureBox.Image);
+            //    c.Add(pictureBox.Image);
+            //    Simulation.AddCrossing(c);
+
+            //}
+            //if (Simulation.simulationRunning = false)
+            //{
+            //    Simulation.Start();
+            //}
+            //else
+            //    MessageBox.Show("Simulation is running");
+>>>>>>> Stashed changes
 
             foreach (PictureBox p in activatedpb)
             {
@@ -242,6 +263,7 @@ namespace ProCp_Traffic_simulation
                 //DrawArea = new Bitmap(p.Size.Width, p.Size.Height);
                 //drawArea.Add(DrawArea);
 
+<<<<<<< Updated upstream
                 simulation = new Simulation();
                 Crossing crossing = new Crossing(p.BackgroundImage);
                 simulation.AddCrossing(crossing);
@@ -262,6 +284,16 @@ namespace ProCp_Traffic_simulation
 
 
             //TESTING CAR MOVEMENT
+=======
+            //TESTING CAR MOVEMENT
+            myRect = new Rectangle(8, 77, 8, 8);
+            myCar = new Car(Direction.West, myRect);  
+            timerTest.Start();
+            ThreadStart thRef = new ThreadStart(myCar.Move);
+           carTest = new Thread(thRef);
+            carTest.Start();
+          
+>>>>>>> Stashed changes
         }
 
         private void btnCrossings_Click(object sender, EventArgs e)
