@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace ProCp_Traffic_simulation
         Graphics gr;
         List<PictureBox> activatedpb;
         Simulation simulation;
+        Stopwatch stopWatch = new Stopwatch();
 
         public Form1()
         {
@@ -98,7 +100,7 @@ namespace ProCp_Traffic_simulation
                     activatedpb.Add(pbTile7);
                     break;
                 case 8:
-                    if (picture == 1) this.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
+                    if (picture == 1) this.pbTile8.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
                     else this.pbTile8.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
                     activatedpb.Add(pbTile8);
                     break;
@@ -230,6 +232,10 @@ namespace ProCp_Traffic_simulation
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+       
+            stopWatch.Start();
+         
+
             foreach (PictureBox p in activatedpb)
             {
                 p.Image = DrawArea;
@@ -267,18 +273,23 @@ namespace ProCp_Traffic_simulation
         {
             if (!myCar.toStop)
             {
-
+                label1.Text = "" + stopWatch.Elapsed;
                 gr = Graphics.FromImage(DrawArea);
                 gr.Clear(Color.Transparent);
                 gr = Graphics.FromImage(DrawArea);
                 //gr.DrawEllipse(Brushes.Black, );
                 gr.FillEllipse(Brushes.Black, myCar.rect);
 
-          foreach (PictureBox p in activatedpb)
+                foreach (PictureBox p in activatedpb)
                 {
-                p.Invalidate();
+                    p.Invalidate();
                 }
             }
+            else
+            {
+             stopWatch.Stop();
+             stopWatch.Reset();
+            }             
         }
 
 

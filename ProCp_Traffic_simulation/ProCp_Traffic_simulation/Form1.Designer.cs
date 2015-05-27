@@ -55,6 +55,7 @@
             this.lbTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timerTest = new System.Windows.Forms.Timer(this.components);
+            this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.gbGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTile2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTile3)).BeginInit();
@@ -424,6 +425,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timerTest;
+        private System.Windows.Forms.Timer timerTime;
     }
 }
 
