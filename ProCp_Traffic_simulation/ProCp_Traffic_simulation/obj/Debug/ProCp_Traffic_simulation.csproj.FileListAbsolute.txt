@@ -10,3 +10,14 @@ C:\Users\Stoyan\Desktop\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\De
 C:\Users\Stoyan\Desktop\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.csproj.GenerateResource.Cache
 C:\Users\Stoyan\Desktop\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.exe
 C:\Users\Stoyan\Desktop\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.pdb
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe.config
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.exe
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.pdb
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\Crossings\Crossing1.png
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\Crossings\Crossing2.png
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.exe
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.pdb
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Form1.resources
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Form2.resources
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Properties.Resources.resources
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.csproj.GenerateResource.Cache
