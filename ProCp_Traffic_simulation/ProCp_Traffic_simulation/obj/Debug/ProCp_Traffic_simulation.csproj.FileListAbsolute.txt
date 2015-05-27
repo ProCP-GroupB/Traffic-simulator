@@ -21,3 +21,5 @@ D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bi
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\bin\Debug\ProCp_Traffic_simulation.pdb
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.exe
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.pdb
+C:\Users\boris\Documents\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.exe
+C:\Users\boris\Documents\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.pdb
