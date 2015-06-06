@@ -33,3 +33,4 @@ D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\ob
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Form2.resources
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.Properties.Resources.resources
 D:\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.csproj.GenerateResource.Cache
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\ProCp_Traffic_simulation\ProCp_Traffic_simulation\obj\Debug\ProCp_Traffic_simulation.csprojResolveAssemblyReference.cache

@@ -115,7 +115,7 @@ namespace ProCp_Traffic_simulation
         {
             toStop = false;
             direction = Direction.South;
-           rect = new Rectangle(55,77,8,8);
+            rect = new Rectangle(55,77,8,8);
             Move();
           
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using System.Text;
 using System.Drawing;
 
@@ -10,13 +11,15 @@ namespace ProCp_Traffic_simulation
     {
         //private Point position;
         private int greenTime;
-        int x, y, width, height;
+        public int x, y, width, height;
+        Rectangle[] rectangles = new Rectangle[1];
         private Rectangle lights;
-        SolidBrush b;
+        public SolidBrush b;
         LightColor light;
-
+        Graphics gr;
+        Bitmap DrawArea = new Bitmap(150, 150);
         
-        public TrafficLight(int x, int y, int width, int height, int GreenTime, Rectangle[] Lights)
+        public TrafficLight(int x, int y, int width, int height, int GreenTime)
         {
             this.x = x;
             this.y = y;

@@ -14,12 +14,16 @@ namespace ProCp_Traffic_simulation
 {
     public partial class Form1 : Form
     {
-        Bitmap DrawArea;
+        public Bitmap DrawArea;
         List<Bitmap> drawArea = new List<Bitmap>();
         Rectangle myRect;
         Car myCar;
         Thread carTest;
-        
+        Group[] group = new Group[2];
+        //Rectagles for the groups
+        Rectangle[] rectangles = new Rectangle[2];
+        Rectangle[] rectangles2 = new Rectangle[2];
+
         Graphics gr;
         List<PictureBox> activatedpb;
         Simulation simulation;
@@ -30,8 +34,13 @@ namespace ProCp_Traffic_simulation
             InitializeComponent();
 
             DrawArea = new Bitmap(pbTile1.Size.Width, pbTile1.Size.Height);
-           // pbTile1.Image = DrawArea;
             activatedpb = new List<PictureBox>();
+
+            rectangles[0] = new Rectangle(100,35,15,15);
+            rectangles[1] = new Rectangle(35,100,15,15);
+
+            rectangles2[0] = new Rectangle(35, 35, 15, 15);
+            rectangles2[1] = new Rectangle(100, 100, 15, 15);
         }
 
         public FileHelper FileHelper
@@ -71,7 +80,7 @@ namespace ProCp_Traffic_simulation
                     activatedpb.Add(pbTile1);
                     break;
                 case 2:
-                    if (picture == 1) this.pbTile2.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
+                    if (picture == 1) this.pbTile2.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing1;
                     else this.pbTile2.BackgroundImage = ProCp_Traffic_simulation.Properties.Resources.Crossing2;
                     activatedpb.Add(pbTile2);
                     break;
@@ -239,8 +248,6 @@ namespace ProCp_Traffic_simulation
             foreach (PictureBox p in activatedpb)
             {
                 p.Image = DrawArea;
-                //DrawArea = new Bitmap(p.Size.Width, p.Size.Height);
-                //drawArea.Add(DrawArea);
 
                 simulation = new Simulation();
                 Crossing crossing = new Crossing(p.BackgroundImage);
@@ -251,7 +258,17 @@ namespace ProCp_Traffic_simulation
                 ThreadStart thRef = new ThreadStart(myCar.Move);
                 carTest = new Thread(thRef);
 
+                //Makes a new Group 
+                Group group1 = new Group("Left-Right",rectangles);
+                group[0] = group1; 
+                group[0].AddTrafficLight();
+
+                Group group2 = new Group("Top-Bottom", rectangles2);
+                group[1] = group2;
+                group[1].AddTrafficLight();
+                
                 carTest.Start();
+               
             }
             if (simulation.simulationRunning == false)
             {
@@ -279,6 +296,23 @@ namespace ProCp_Traffic_simulation
                 //gr.DrawEllipse(Brushes.Black, );
                 gr.FillEllipse(Brushes.Black, myCar.rect);
 
+                List<TrafficLight> listOfLights = new List<TrafficLight>();
+                listOfLights = group[0].GetListOfLights();
+                listOfLights.AddRange(group[1].GetListOfLights());
+
+                //Paints some trafficLights green and other default(red)
+                TrafficLight temp = listOfLights.ElementAt(0);
+                temp.paintgreen();
+                TrafficLight temp1 = listOfLights.ElementAt(1);
+                temp1.paintgreen();
+
+
+                //Draws TrafficLights
+                foreach (TrafficLight t in listOfLights)
+                {
+                    gr.FillEllipse(t.b, t.x, t.y, 15, 15);
+                }
+
                 foreach (PictureBox p in activatedpb)
                 {
                     p.Invalidate();
@@ -286,8 +320,8 @@ namespace ProCp_Traffic_simulation
             }
             else
             {
-             stopWatch.Stop();
-             stopWatch.Reset();
+                stopWatch.Stop();
+                stopWatch.Reset();
             }             
         }
 
