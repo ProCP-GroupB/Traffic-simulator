@@ -22,7 +22,7 @@ namespace ProCp_Traffic_simulation
         // Where the cars have to stop
         private int stopPoint;
         private int speed;
-        private List<Car> listOfCars;
+        public List<Car> listOfCars;
         /// <summary>
         /// If true let's cars move
         /// </summary>
@@ -65,7 +65,8 @@ namespace ProCp_Traffic_simulation
             this.laneID = laneID;
             this.direction = direction;
             this.isFeeder = isLaneFeeder;
-            this.carsAdded = -1;
+            this.listOfCars = new List<Car>();
+            //this.carsAdded = -1;
             if (isFeeder)
             {
                 switch (direction.ToString().ToLower())
@@ -106,12 +107,12 @@ namespace ProCp_Traffic_simulation
         }
 
         /// <summary>
-        /// Adds a new car to the lane and increases the number of cars in front this one
+        /// Adds a new car to the lane and sets the cars in front of this car;
         /// </summary>
-        public void AddCar(Car car)
+        public void AddCar(ref Car car)
         {
-            carsAdded += 1;
-            car.nrCarsInFront = carsAdded;
+
+            car.carsInFront = listOfCars;
             listOfCars.Add(car);
         }
 
