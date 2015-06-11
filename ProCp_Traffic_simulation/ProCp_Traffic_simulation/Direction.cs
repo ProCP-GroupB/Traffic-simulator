@@ -11,5 +11,9 @@ namespace ProCp_Traffic_simulation
         South,
         East,
         West,
+        WestSouth,
+        SouthEast,
+        EastNorth,
+        NorthWest,
     }
 }

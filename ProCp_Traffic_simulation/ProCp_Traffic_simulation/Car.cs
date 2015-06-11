@@ -16,10 +16,10 @@ namespace ProCp_Traffic_simulation
         private int height;
         private int width;
         // Critical section borders
-        private int minXcs = 52;
-        private int maxXcs = 97;
-        private int minYcs = 34;
-        private int maxYcs = 170;
+        private int minXcs = 33;
+        private int maxXcs = 108;
+        private int minYcs = 32;
+        private int maxYcs = 108;
         private List<Car> carsInFront;
         private Direction direction;
 

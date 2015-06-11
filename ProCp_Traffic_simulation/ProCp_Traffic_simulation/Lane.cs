@@ -11,28 +11,54 @@ namespace ProCp_Traffic_simulation
         private int laneID;
 
         // According to the direction of the lane, the traffic light will be put at certain position
-        private int direction;
+        private Direction direction;
 
         // Where lane starts
-        private Point startPoint;
+        private int startPoint;
 
         // Where the lane ends
-        private Point endPoint;
+        private int endPoint;
 
         // Where the cars have to stop
-        private Point stopPoint;
+        private int stopPoint;
         private int speed;
         private List<Car> listOfCars;
         /// <summary>
         /// If true let's cars move
         /// </summary>
-        private bool isGreen;
+        public bool isGreen;
         /// <summary>
         /// Whether this lane consumes or creates cars
         /// </summary>
-        private bool isFeeder;
+        public bool isFeeder;
 
-        public Lane(int laneID, int direction, Point startPoint, Point endPoint, Point stopPoint, int speed)
+        /// <summary>
+        /// Returns the endPoint of a Lane
+        /// </summary>
+        public int EndPoint
+        {
+            get { return endPoint; }
+        }
+
+        public int StopPoint
+        {
+            get { return stopPoint; }
+        }
+
+        public int StartPoint
+        {
+            get { return startPoint; }
+        }
+
+        /// <summary>
+        /// Returns the direction
+        /// </summary>
+        public Direction getDirection
+        {
+            get { return direction; }
+        }
+
+        public Lane(int laneID, Direction direction, int startPoint, int endPoint, int stopPoint, int speed)
         {
             this.laneID = laneID;
             this.direction = direction;
@@ -89,18 +115,10 @@ namespace ProCp_Traffic_simulation
         /// <summary>
         /// Removes the car from the lane (list as well)
         /// </summary>
-        public void RemoveCar()
+        public void RemoveCar(Car car)
         {
-
-            
-            foreach (Car car in listOfCars)
-            {
-                listOfCars.Remove(car);  
-            }
-           
-
-            listOfCars.Remove(Car);
-
+            if (!isFeeder)
+                listOfCars.Remove(car);
         }
 
         /// <summary>
