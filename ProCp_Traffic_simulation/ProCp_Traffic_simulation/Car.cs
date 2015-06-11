@@ -20,9 +20,9 @@ namespace ProCp_Traffic_simulation
         private int maxXcs = 108;
         private int minYcs = 32;
         private int maxYcs = 108;
-        private List<Car> carsInFront;
-        private Direction direction;
 
+        private Direction direction;
+        private int carsInFront;
         public Rectangle rect;
         public bool toStop = false;
 
@@ -37,6 +37,8 @@ namespace ProCp_Traffic_simulation
                 direction = value;
             }
         }
+
+        public int nrCarsInFront { get { return carsInFront; } set { carsInFront = value; } }
 
         public Car(Direction direct, Rectangle rectangle)
         {
@@ -99,7 +101,59 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void Stop()
         {
-            throw new System.NotImplementedException();
+            switch (direction.ToString().ToLower())
+            {
+                case "west":
+                    while ((rect.X <= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
+                    {
+
+
+                        rect.X += 1;
+                        Thread.Sleep(51);       // waiting for the timer
+                    }
+                    toStop = true;
+                    break;
+                case "east":
+                    while ((rect.X >= onLane.StopPoint && onLane.isGreen) || rect.X < maxXcs)    // || onLane.isGreen
+                    {
+                        rect.X -= 1;
+                        Thread.Sleep(51);       // waiting for the timer
+                    }
+                    break;
+                case "north":
+                    while ((rect.Y <= minYcs && onLane.isGreen) || onLane.isFeeder == false)
+                    {
+                        rect.Y += 1;
+                        Thread.Sleep(51);
+                    }
+                    break;
+                case "south":
+                    switch (nrCarsInFront)
+                    {
+                        case 0:
+                            while (rect.Y <= onLane.StopPoint)
+                            {
+                                rect.Y -= 1;
+                                Thread.Sleep(51);
+                            }
+                            break;
+                        case 1:
+                            while (rect.Y <= onLane.StopPoint - 5)
+                            {
+                                rect.Y -= 1;
+                                Thread.Sleep(51);
+                            }
+                            break;
+                        case 2:
+                            while (rect.Y <= onLane.StopPoint - 10)
+                            {
+                                rect.Y -= 1;
+                                Thread.Sleep(51);
+                            }
+                            break;
+                    }
+                    break;
+            }
         }
 
         /// <summary>

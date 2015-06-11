@@ -58,14 +58,40 @@ namespace ProCp_Traffic_simulation
             get { return direction; }
         }
 
-        public Lane(int laneID, Direction direction, int startPoint, int endPoint, int stopPoint, int speed)
+        private int carsAdded;
+
+        public Lane(int laneID, Direction direction, bool isLaneFeeder)
         {
             this.laneID = laneID;
             this.direction = direction;
-            this.startPoint = startPoint;
-            this.endPoint = endPoint;
-            this.stopPoint = stopPoint;
-            this.speed = speed;
+            this.isFeeder = isLaneFeeder;
+            this.carsAdded = -1;
+            if (isFeeder)
+            {
+                switch (direction.ToString().ToLower())
+                {
+                    case "west":
+                        stopPoint = 33;
+                        endPoint = stopPoint;
+                        startPoint = 0;
+                        break;
+                    case "east":
+                        stopPoint = 108;
+                        endPoint = stopPoint;
+                        startPoint = 150;
+                        break;
+                    case "north":
+                        stopPoint = 32;
+                        endPoint = stopPoint;
+                        startPoint = 0;
+                        break;
+                    case "south":
+                        stopPoint = 108;
+                        endPoint = stopPoint;
+                        startPoint = 150;
+                        break;
+                }
+            }
         }
 
         public Car Car
@@ -80,20 +106,13 @@ namespace ProCp_Traffic_simulation
         }
 
         /// <summary>
-        /// Adds and creates a new car to the lane
+        /// Adds a new car to the lane and increases the number of cars in front this one
         /// </summary>
-        public void AddCar()
+        public void AddCar(Car car)
         {
-
-             
-            {
-                //Car car = new Car();
-                //listOfCars.Add(car);
-            }
-
-            listOfCars.Add(Car);
-
-
+            carsAdded += 1;
+            car.nrCarsInFront = carsAdded;
+            listOfCars.Add(car);
         }
 
         /// <summary>
