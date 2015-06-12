@@ -14,7 +14,7 @@ namespace ProCp_Traffic_simulation
         private Image image;
         private Point[] turningPoints;
         private int nrOfCars;
-        Group group;
+        List<Group> groups;
         LightColor light;
         TrafficLight trafficlight;
 
@@ -29,7 +29,7 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         /// 
 
-        public Crossing(Image image)
+        public Crossing(Image image, int numOfCars)
         {
            // this.crossingNumber = CrossingNumber;
             Image = image;
@@ -42,14 +42,15 @@ namespace ProCp_Traffic_simulation
         }
 
     
-        public Group Groups
+        public List<Group> Groups
         {
             get
             {
-                throw new System.NotImplementedException();
+                return groups;
             }
             set
             {
+                groups = value;
             }
         }
 

@@ -72,5 +72,10 @@ namespace ProCp_Traffic_simulation
             listOfLights.Add(lightOpposite);
 
         }
+
+        public void AddLane(Lane lane)
+        {
+            listOfLanes.Add(lane);
+        }
     }
 }
