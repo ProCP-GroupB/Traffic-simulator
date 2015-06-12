@@ -101,7 +101,7 @@ namespace ProCp_Traffic_simulation
                         Thread.Sleep(51);
 
                     }
-                    if (rect.X >= onLane.StopPoint && onLane.isGreen)
+                    //if (rect.X >= onLane.StopPoint && onLane.isGreen)
                         //toChangeDirection;
 
                     break;
