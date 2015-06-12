@@ -14,7 +14,7 @@ namespace ProCp_Traffic_simulation
         private Direction direction;
 
         // Where lane starts
-        private int startPoint;
+        private Point startPoint;
 
         // Where the lane ends
         private int endPoint;
@@ -45,7 +45,7 @@ namespace ProCp_Traffic_simulation
             get { return stopPoint; }
         }
 
-        public int StartPoint
+        public Point StartPoint
         {
             get { return startPoint; }
         }
@@ -74,22 +74,68 @@ namespace ProCp_Traffic_simulation
                     case "west":
                         stopPoint = 33;
                         endPoint = stopPoint;
-                        startPoint = 0;
+                        startPoint = new Point(0,77);
                         break;
                     case "east":
                         stopPoint = 108;
                         endPoint = stopPoint;
-                        startPoint = 150;
+                        startPoint = new Point(150,68);
                         break;
                     case "north":
                         stopPoint = 32;
                         endPoint = stopPoint;
-                        startPoint = 0;
+                        startPoint = new Point(0,66);
                         break;
                     case "south":
                         stopPoint = 108;
                         endPoint = stopPoint;
-                        startPoint = 150;
+                        startPoint = new Point(76,150);
+                        break;
+                    case "westsouth":
+                        stopPoint = 33;
+                        endPoint = stopPoint;
+                        startPoint = new Point(0,85);
+                        break;
+                    case "eastnorth":
+                        stopPoint = 108;
+                        endPoint = stopPoint;
+                        startPoint = new Point(150,58);
+                        break;
+                    case "northwest":
+                        stopPoint = 32;
+                        endPoint = stopPoint;
+                        startPoint = new Point(0,56);
+                        break;
+                    case "southeast":
+                        stopPoint = 108;
+                        endPoint = stopPoint;
+                        startPoint = new Point(150,86);
+                        break;
+                }
+            }
+            else if (!isFeeder)
+            {
+                switch (direction.ToString().ToLower())
+                {
+                    case "west":
+                        stopPoint = 150;
+                        endPoint = stopPoint;
+                        startPoint = new Point(86, 85);
+                        break;
+                    case "south":
+                        stopPoint = 0;
+                        endPoint = stopPoint;
+                        startPoint = new Point(86, 61);
+                        break;
+                    case "east":
+                        stopPoint = 0;
+                        endPoint = stopPoint;
+                        startPoint = new Point(59, 61);
+                        break;
+                    case "north":
+                        stopPoint = 150;
+                        endPoint = stopPoint;
+                        startPoint = new Point(59, 85);
                         break;
                 }
             }

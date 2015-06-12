@@ -26,6 +26,8 @@ namespace ProCp_Traffic_simulation
         public Rectangle rect;
         public bool toStop = false;
 
+        public event EventHandler toChangeDirection;
+
         public Direction Direction
         {
             get
@@ -79,16 +81,16 @@ namespace ProCp_Traffic_simulation
                     }
                     break;
                 case "south":
-                    while ((rect.Y <= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
+                    while ((rect.Y >= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
                     {
-                        rect.Y += 1;
+                        rect.Y -= 1;
                         Thread.Sleep(51);
                     }
                     break;
                 case "north":
-                    while ((rect.Y >= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
+                    while ((rect.Y <= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
                     {
-                        rect.Y -= 1;
+                        rect.Y += 1;
                         Thread.Sleep(51);
                     }
                     break;
@@ -99,11 +101,14 @@ namespace ProCp_Traffic_simulation
                         Thread.Sleep(51);
 
                     }
+                    if (rect.X >= onLane.StopPoint && onLane.isGreen)
+                        //toChangeDirection;
+
                     break;
                 case "southeast":
-                    while ((rect.Y <= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
+                    while ((rect.Y >= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
                     {
-                        rect.Y += 1;
+                        rect.Y -= 1;
                         Thread.Sleep(51);
                     }
                     break;
@@ -116,9 +121,9 @@ namespace ProCp_Traffic_simulation
                     }
                     break;
                 case "northwest":
-                    while ((rect.Y >= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
+                    while ((rect.Y <= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
                     {
-                        rect.Y -= 1;
+                        rect.Y += 1;
                         Thread.Sleep(51);
                     }
                     break;
@@ -152,16 +157,16 @@ namespace ProCp_Traffic_simulation
                         }
                         break;
                     case "south":
-                        while (rect.Y <= lastCar.rect.Y - 10)
+                        while (rect.Y >= lastCar.rect.Y - 10)
                         {
-                            rect.Y += 1;
+                            rect.Y -= 1;
                             Thread.Sleep(51);
                         }
                         break;
                     case "north":
-                        while (rect.Y >= lastCar.rect.Y + 10)
+                        while (rect.Y <= lastCar.rect.Y + 10)
                         {
-                            rect.Y -= 1;
+                            rect.Y += 1;
                             Thread.Sleep(51);
                         }
                         break;
@@ -180,16 +185,16 @@ namespace ProCp_Traffic_simulation
                         }
                         break;
                     case "southeast":
-                        while (rect.Y <= lastCar.rect.Y - 10)
+                        while (rect.Y >= lastCar.rect.Y - 10)
                         {
-                            rect.Y += 1;
+                            rect.Y -= 1;
                             Thread.Sleep(51);
                         }
                         break;
                     case "northwest":
-                        while (rect.Y >= lastCar.rect.Y + 10)
+                        while (rect.Y <= lastCar.rect.Y + 10)
                         {
-                            rect.Y -= 1;
+                            rect.Y += 1;
                             Thread.Sleep(51);
                         }
                         break;
@@ -218,16 +223,16 @@ namespace ProCp_Traffic_simulation
                         }
                         break;
                     case "south":
-                        while (rect.Y <= onLane.StopPoint)
+                        while (rect.Y >= onLane.StopPoint)
                         {
-                            rect.Y += 1;
+                            rect.Y -= 1;
                             Thread.Sleep(51);
                         }
                         break;
                     case "north":
-                        while (rect.Y >= onLane.StopPoint)
+                        while (rect.Y <= onLane.StopPoint)
                         {
-                            rect.Y -= 1;
+                            rect.Y += 1;
                             Thread.Sleep(51);
                         }
                         break;
@@ -239,9 +244,9 @@ namespace ProCp_Traffic_simulation
                         }
                         break;
                     case "southeast":
-                        while (rect.Y <= onLane.StopPoint)
+                        while (rect.Y >= onLane.StopPoint)
                         {
-                            rect.Y += 1;
+                            rect.Y -= 1;
                             Thread.Sleep(51);
                         }
                         break;
@@ -253,9 +258,9 @@ namespace ProCp_Traffic_simulation
                         }
                         break;
                     case "northwest":
-                        while (rect.Y >= onLane.StopPoint)
+                        while (rect.Y <= onLane.StopPoint)
                         {
-                            rect.Y -= 1;
+                            rect.Y += 1;
                             Thread.Sleep(51);
                         }
                         break;
