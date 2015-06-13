@@ -32,6 +32,9 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public bool isFeeder;
 
+        public event LaneHandler toChangeLane;
+        public delegate void LaneHandler(Lane lane, Car car);
+
         /// <summary>
         /// Returns the endPoint of a Lane
         /// </summary>
@@ -155,11 +158,19 @@ namespace ProCp_Traffic_simulation
         /// <summary>
         /// Adds a new car to the lane and sets the cars in front of this car;
         /// </summary>
-        public void AddCar(ref Car car)
+        public void AddCar(Car car)
         {
-
             car.carsInFront = listOfCars;
+            car.toChangeDirection += new Car.DirectionHandler(onChangeDirection);
             listOfCars.Add(car);
+        }
+
+        public void onChangeDirection(Car car, Direction dir)
+        {
+            listOfCars.Remove(car);
+            car.Direction = dir;
+            car.toChangeDirection -= new Car.DirectionHandler(onChangeDirection);
+            toChangeLane(this, car);
         }
 
         /// <summary>

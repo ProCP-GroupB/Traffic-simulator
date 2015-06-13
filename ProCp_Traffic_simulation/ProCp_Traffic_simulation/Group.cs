@@ -82,6 +82,23 @@ namespace ProCp_Traffic_simulation
                     listOfLanes.Add(new Lane(8, Direction.East, false));
                     break;
             }
+
+            foreach (Lane temp in listOfLanes)
+            {
+                temp.toChangeLane += new Lane.LaneHandler(onChangeLane);
+            }
+        }
+
+        public void onChangeLane(Lane lane, Car car)
+        {
+            foreach (Lane temp in listOfLanes)
+            {
+                if (temp.getDirection == car.Direction && temp.isFeeder == false)
+                {
+                    temp.AddCar(car);
+                    car.ChangeDirection(car.Direction);
+                }
+            }
         }
 
         /// <summary>

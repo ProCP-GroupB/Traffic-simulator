@@ -26,7 +26,8 @@ namespace ProCp_Traffic_simulation
         public Rectangle rect;
         public bool toStop = false;
 
-        public event EventHandler toChangeDirection;
+        public event DirectionHandler toChangeDirection;
+        public delegate void DirectionHandler(Car car, Direction dir);
 
         public Direction Direction
         {
@@ -99,10 +100,10 @@ namespace ProCp_Traffic_simulation
                     {
                         rect.X += 1;
                         Thread.Sleep(51);
-
+                        
                     }
-                    //if (rect.X >= onLane.StopPoint && onLane.isGreen)
-                        //toChangeDirection;
+                    if (rect.X >= onLane.StopPoint && onLane.isGreen)
+                        toChangeDirection(this,Direction.North);
 
                     break;
                 case "southeast":
@@ -111,6 +112,9 @@ namespace ProCp_Traffic_simulation
                         rect.Y -= 1;
                         Thread.Sleep(51);
                     }
+                    if (rect.Y <= onLane.StopPoint && onLane.isGreen)
+                        toChangeDirection(this, Direction.West);
+
                     break;
                 case "eastnorth":
                     while ((rect.X >= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
@@ -119,6 +123,9 @@ namespace ProCp_Traffic_simulation
                         Thread.Sleep(51);
 
                     }
+                    if (rect.X <= onLane.StopPoint && onLane.isGreen)
+                        toChangeDirection(this, Direction.South);
+
                     break;
                 case "northwest":
                     while ((rect.Y <= onLane.StopPoint && onLane.isGreen) || onLane.isFeeder == false)
@@ -126,6 +133,9 @@ namespace ProCp_Traffic_simulation
                         rect.Y += 1;
                         Thread.Sleep(51);
                     }
+                    if (rect.Y >= onLane.StopPoint && onLane.isGreen)
+                        toChangeDirection(this, Direction.East);
+
                     break;
             }
             Stop();
@@ -524,7 +534,7 @@ namespace ProCp_Traffic_simulation
             throw new System.NotImplementedException();
         }
 
-        public void ChangeDirection()
+        public void ChangeDirection(Direction newDirection)
         {
             toStop = false;
             direction = Direction.South;
