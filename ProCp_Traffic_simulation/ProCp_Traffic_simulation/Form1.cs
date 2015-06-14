@@ -250,7 +250,7 @@ namespace ProCp_Traffic_simulation
                 p.Image = DrawArea;
 
                 simulation = new Simulation();
-                Crossing crossing = new Crossing(p.BackgroundImage);
+                Crossing crossing = new Crossing(p.BackgroundImage,5);
                 simulation.AddCrossing(crossing);
                 myRect = new Rectangle(8, 77, 8, 8);
                 myCar = new Car(Direction.West, myRect);

@@ -24,10 +24,6 @@ namespace ProCp_Traffic_simulation
         public Point[] Turningpoints{get;set;}
         public int NrOfCars{get;set;}
 
-        /// <summary>
-        /// Deconstructor will be used when RemoveCrossing()[Simulation] to set Group,Lanes and etc. objects to null
-        /// </summary>
-        /// 
 
         public Crossing(Image image, int numOfCars)
         {
@@ -35,13 +31,16 @@ namespace ProCp_Traffic_simulation
             Image = image;
 
             //Turningpoints = point;
-            NrOfCars = 0;
-
-            nrOfCars = 0;
+            NrOfCars = numOfCars;
 
         }
 
-    
+
+        public void setCrossing()
+        {
+
+        }
+
         public List<Group> Groups
         {
             get
