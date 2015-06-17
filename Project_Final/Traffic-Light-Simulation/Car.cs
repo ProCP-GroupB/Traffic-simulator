@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace Traffic_Light_Simulation
 {
-    class MovingObject
+    class Car
     {
         public Point pos;
         private int speed;
@@ -22,21 +22,24 @@ namespace Traffic_Light_Simulation
         /// <summary>
         /// This is the constuctor of the class MovingObject
         /// </summary>
-        public MovingObject(Point p, int lanenum)
+        public Car(Point p, int lanenum)
         {
-            this.color = Color.Green;
+           this.color = Color.Green;
            this.laneNumber = lanenum;
             pos = p;
           
         }
+
         /// <summary>
-        /// This method is responsible for moving the moving objects
+        /// This method is responsible for moving the car objects
         /// </summary>
         /// <param name="postToDrawObject">The initial position of the object before it is moved</param>
         /// <param name="speed">The speed at which the object should be moved</param>
         public void move(Point pos)   //int speed
         {
+            throw new NotImplementedException();
         }
+
         /// <summary>
         /// This method paints the moving objects on a graphics
         /// </summary>
@@ -53,15 +56,21 @@ namespace Traffic_Light_Simulation
    
         }
 
+        /// <summary>
+        /// Sets the new position of the car
+        /// </summary>
+        /// <param name="newp"></param>
         public void setPosition(Point newp)
         {
             this.pos = newp;
         }
+
         /// <summary>
-        /// This method stops a moving MovingObject
+        /// This method stops a moving Car
         /// </summary>
         public void stop()
         {
+            throw new NotImplementedException();
         }
 
     }

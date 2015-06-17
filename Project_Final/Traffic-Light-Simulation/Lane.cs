@@ -14,8 +14,7 @@ namespace Traffic_Light_Simulation
     {
         public Traffic_light tl;
         List<Point> pts; //every lane has start position, stop position, turning position and end position
-        List<MovingObject> listOfCars= new List<MovingObject>(); //no of objects coming in the lane in some constant time
-        //List<MovingObject> cominginCars = new List<MovingObject>();
+        List<Car> listOfCars= new List<Car>(); //no of objects coming in the lane
         int NoOfcarForTrafficJam; //no of cars exceeding capacity
         int maximumcapacity;
         Point startPoint;
@@ -30,20 +29,10 @@ namespace Traffic_Light_Simulation
         const  int speed =n*baseNumber ;
         private Graphics graphics;
         bool check = true;
-        
-        
-        
-        //-----------------------------------------------
-        
-
-
-
-        //---------------------------------------------
 
 
         public Lane(int laneNumber, Point startPoint, Point turning, Point endPoint, Point stopPoint, int capacity, string direction,Point pos)
         {
-
             this.startPoint = startPoint;
             this.turning = turning;
             this.endPoint = endPoint;
@@ -52,25 +41,16 @@ namespace Traffic_Light_Simulation
             this.direction = direction;
             this.post = pos;
             this.maximumcapacity = capacity;
-            
-            //  int gap = 0;
-            // List<Point> FFF = new List<Point>();
 
             createTrafficLight();
-            createMovingObject();
-
-
-            
-                
-
-            
+            createCarObject();   
         }
 
-//------------------------------------------------------------------
+
         /// <summary>
         /// creates a trafic light for each lane
         /// </summary>
-          private void createTrafficLight()
+        private void createTrafficLight()
         {
 
           
@@ -113,7 +93,6 @@ namespace Traffic_Light_Simulation
             else if (direction == "south-left")
             {
                 tl = new Traffic_light(post.X + 155, post.Y + 180, 11, 10);
-                //  tl = new Traffic_light(post.X + 155, post.Y + 165, 6, 10);
             }
             else if (direction == "south-center")
             {
@@ -123,7 +102,7 @@ namespace Traffic_Light_Simulation
             {
                 tl = new Traffic_light(post.X + 182, post.Y + 180, 11, 10);
             }
-                // for pedestri
+      // for pedestrians
 
                 
             else if (direction == "withpedestrian-north")
@@ -142,59 +121,9 @@ namespace Traffic_Light_Simulation
             {
                 tl = new Traffic_light(post.X + 153, post.Y + 153, 11, 10);
             }
-           /* else if (direction == "withpedestrian-east-bottom")
-            {
-                tl = new Traffic_light(post.X + 10, post.Y + 182, 11, 10);
-            }
-            else if (direction == "withpedestrian-west-top")
-            {
-                tl = new Traffic_light(post.X + 180, post.Y + 8, 11, 10);
-            }
-            else if (direction == "withpedestrian-west-center")
-            {
-                tl = new Traffic_light(post.X + 180, post.Y + 22, 11, 10);
-            }
-            else if (direction == "withpedestrian-west-bottom")
-            {
-                tl = new Traffic_light(post.X + 180, post.Y + 36, 11, 10);
-            }
-            else if (direction == "withpedestrian-north-left")
-            {
-                tl = new Traffic_light(post.X + 155, post.Y + 180, 11, 10);
-            }
-            else if (direction == "withpedestrian-north-center")
-            {
-                tl = new Traffic_light(post.X + 169, post.Y + 180, 11, 10);
-            }
-            else if (direction == "withpedestrian-north-right")
-            {
-                tl = new Traffic_light(post.X + 182, post.Y + 180, 11, 10);
-            }
-            else if (direction == "withpedestrian-pedestrian-crossing1")
-            {
-                tl = new Traffic_light(post.X + 37, post.Y + 37, 11, 10);
-            }
-            else if (direction == "withpedestrian-pedestrian-crossing2")
-            {
-                tl = new Traffic_light(post.X + 152, post.Y + 37, 11, 10);
-            }
-            else if (direction == "withpedestrian-pedestrian-crossing3")
-            {
-                tl = new Traffic_light(post.X + 37, post.Y + 154, 11, 10);
-            }
-            else if (direction == "withpedestrian-pedestrian-crossing4")
-            {
-                tl = new Traffic_light(post.X + 154, post.Y + 152, 11, 10);
-            }
-            else
-            {
-                tl = new Traffic_light(post.X + 182, post.Y + 165, 11, 10);
-            }*/
         }
 
-  /*-------------------------------------------------------------------------------------*/
-
-        public void createMovingObject()
+        public void createCarObject()
         {
             Point carPosition = new Point();
             int i = 0;
@@ -207,99 +136,84 @@ namespace Traffic_Light_Simulation
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y - 4);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y - 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
                             
-                            listOfCars.Add(tempo);
-                            
+                            listOfCars.Add(tempo);                            
                         }
                         break;
-                    case 2:
-                        
-                        
+                    case 2: 
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y - 4);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y - 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 3:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y - 4);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y - 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
-                    case 4:
-                        
+                    case 4:                        
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 4, stopPoint.Y - 2);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.X = carPosition.X - 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 5:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 4, stopPoint.Y - 2);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.X = carPosition.X - 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 6:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 4, stopPoint.Y - 2);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.X = carPosition.X - 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 7:
@@ -307,99 +221,84 @@ namespace Traffic_Light_Simulation
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y + 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 8:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y + 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 9:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y + 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
-                    case 10:
-                        
+                    case 10:                        
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X, stopPoint.Y-2);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.X = carPosition.X + 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                     case 11:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X, stopPoint.Y - 2);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.X = carPosition.X + 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
-
                         break;
-
                     case 12:
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X, stopPoint.Y - 2);
-                            listOfCars.Add(new MovingObject(carPosition, myNumber));
-                            //MovingObject car = new MovingObject(carPosition);
+                            listOfCars.Add(new Car(carPosition, myNumber));
                         }
                         else
                         {
                             carPosition.X = carPosition.X + 8;
-                            MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            Car tempo = new Car(carPosition, myNumber);
 
                             listOfCars.Add(tempo);
-
                         }
                         break;
                 }
@@ -420,24 +319,19 @@ namespace Traffic_Light_Simulation
             {
                 listOfCars[x].paintSelf(gr);
                 
-            }
-            
-            
-            
+            }          
         }
         
-  /*--------------------------------------------------------------------------------------------------*/
+
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         public List<Point> atPosition()
-        {     //every lane has start position, stop position, turning position and end position
-
-
-
+        {
             return pts;
         }
+
         /// <summary>
         /// This method is used to add a car to a lane by user
         /// </summary>
@@ -445,19 +339,11 @@ namespace Traffic_Light_Simulation
         /// <returns>Returns true if the car object is successfully added</returns>
         public void AddCar(int numberofcars)
         {
-            
-            
-            MovingObject car = new MovingObject(startPoint, myNumber);
+            Car car = new Car(startPoint, myNumber);
             for(int x=0; x<numberofcars; x++)
             {
-               
-            
-            listOfCars.Add(car);
+                listOfCars.Add(car);
             }
-            
-            
-            
-
         }
         /// <summary>
         /// This method is used to add a car to a lane coming from a neghibour
@@ -468,35 +354,30 @@ namespace Traffic_Light_Simulation
         {
             if(check)
             {
-
-            MovingObject car = new MovingObject(startPoint, myNumber);
-            for (int x = 0; x < numberofcars; x++)
-            {
-
-
-                listOfCars.Add(car);
+                Car car = new Car(startPoint, myNumber);
+                for (int x = 0; x < numberofcars; x++)
+                {
+                    listOfCars.Add(car);
+                }
+                check = false;
             }
-            check = false;
-            }
-
-
-
-
         }
+
         /// <summary>
         /// This method removes a car from a lane when it reaches the end of the lane and there is no connection
         /// </summary>
         /// <param name="car">The car that is to be removed</param>
         /// <returns>Returns true if the car is successfully removed and false otherwise</returns>
-        public bool RemoveCar(MovingObject car)
+        public bool RemoveCar(Car car)
         {
-           //List<MovingObject> tempolist = new List<MovingObject>(listOfCars);
+           //List<Car> tempolist = new List<Car>(listOfCars);
            //tempolist.Remove(car);
            //listOfCars = tempolist.ToArray();
            listOfCars.Remove(car);
 
            return true;
         }
+
         /// <summary>
         /// This method checks the traffic to see if there is a jam or not by calculating noOfcarsFor
         /// </summary>
@@ -504,17 +385,16 @@ namespace Traffic_Light_Simulation
         /// <returns>Returns true if there's a traffic jam and false otherwise</returns>
         public bool CheckTrafficJam(Lane l)
         {
-            //sets the NoOfcarForTrafficJam using the green/red time and the noofcars in lane and compare it withmaximum capacity
             return true;
         }
-/// <summary>
-/// this method will set car position according go the dircetion of lane and removes car if out of lane
-/// </summary>
+
+        /// <summary>
+        /// this method will set car position according go the dircetion of lane and removes car if out of lane
+        /// </summary>
         public void move()
         {
             if (myNumber==1)
             {
-
                 for (int i = 0; i < listOfCars.Count; i++)
                 {
                     if (listOfCars[i].pos.Y <= this.turning.Y)
@@ -527,16 +407,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[i]);
                         listOfCars[i].setPosition(this.startPoint);
-                        //AddCar(1);
-                    }
-                    
-                }
-                
-                    
+                    }                    
+                }                    
             }
             else if (myNumber == 2)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y <= this.turning.Y)
@@ -547,16 +422,12 @@ namespace Traffic_Light_Simulation
                     {
                        // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                     
-                }
-                
-
+                }               
             }
             else if (myNumber == 3)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y <= this.turning.Y)
@@ -571,16 +442,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                       //AddCar(1);
                     }
-                }
-                
-                
-
+                }               
             }
             else if (myNumber == 4)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X <= this.turning.X)
@@ -595,16 +461,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                       // AddCar(1);
                     }
                 }
-                
-
-
             }
             else if (myNumber == 5)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X <= this.turning.X)
@@ -618,12 +479,9 @@ namespace Traffic_Light_Simulation
                         //AddCar(1);
                     } 
                 }
-                
-
             }
             else if (myNumber == 6)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X <= this.turning.X)
@@ -638,14 +496,11 @@ namespace Traffic_Light_Simulation
                     {
                        // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-                }
-                
+                }                
             }
             else if (myNumber == 7)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y >= this.turning.Y)
@@ -661,15 +516,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-                }
-                
-
+                }              
             }
             else if (myNumber == 8)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y >= this.turning.Y)
@@ -680,16 +531,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
-                    }
-                    
+                    }                    
                 }
-                
-
             }
             else if (myNumber == 9)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y >= this.turning.Y)
@@ -704,15 +550,12 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-                }
-                
+                }               
 
             }
             else if (myNumber == 10)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X >= this.turning.X)
@@ -727,15 +570,13 @@ namespace Traffic_Light_Simulation
                     {
                        // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
+
                     }
-                }
-                
+                }               
 
             }
              else if (myNumber == 11)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X >= this.turning.X)
@@ -746,16 +587,14 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
+
                     }
                     
-                }
-                
+                }               
 
             }
             else  // lane num 12
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X >= this.turning.X)
@@ -770,19 +609,12 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-                }
-                
-
+                }               
             }
-            //..............
-
-
-           
-           
-
         }
+
+
         public void keepmoving()
         {
             Point carPosition = new Point();
@@ -804,37 +636,26 @@ namespace Traffic_Light_Simulation
                     //to remove the car at end line and put it back at starting point
                     if (listOfCars[i].pos.X < this.endPoint.X)
                     {
-                        
-                      
                         if (i == 0)
                         {
                             carPosition = new Point(stopPoint.X - 2, stopPoint.Y - 4);
-                           // listOfCars.Add(new MovingObject(carPosition, myNumber));
+                           // listOfCars.Add(new Car(carPosition, myNumber));
                             listOfCars[i].pos = carPosition;
-                            //MovingObject car = new MovingObject(carPosition);
+                            //Car car = new Car(carPosition);
                         }
                         else
                         {
                             carPosition.Y = carPosition.Y - 8;
-                            //MovingObject tempo = new MovingObject(carPosition, myNumber);
+                            //Car tempo = new Car(carPosition, myNumber);
 
-                            listOfCars[i].pos = carPosition; //.Add(tempo);
-                            
-                        }
-
-                        
-                        
-                    
-                    }
-                    
-                    
+                            listOfCars[i].pos = carPosition;                            
+                        }                        
+                    } 
                 }
-
 
             }
             else if (myNumber == 2)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y <= this.turning.Y)
@@ -845,16 +666,11 @@ namespace Traffic_Light_Simulation
                     {
                         // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-
                 }
-
-
             }
             else if (myNumber == 3)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y <= this.turning.Y)
@@ -869,11 +685,8 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
-
-
 
             }
             else if (myNumber == 4)
@@ -896,17 +709,12 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.stopPoint);
-                        // AddCar(1);
                     }
                    }
                 }
-
-
-
             }
             else if (myNumber == 5)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X <= this.turning.X)
@@ -917,15 +725,11 @@ namespace Traffic_Light_Simulation
                     {
                         // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
-
-
             }
             else if (myNumber == 6)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X <= this.turning.X)
@@ -940,14 +744,11 @@ namespace Traffic_Light_Simulation
                     {
                         // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
-
             }
             else if (myNumber == 7)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y >= this.turning.Y)
@@ -963,15 +764,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
-
-
             }
             else if (myNumber == 8)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y >= this.turning.Y)
@@ -982,16 +779,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-
                 }
-
-
             }
             else if (myNumber == 9)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.Y >= this.turning.Y)
@@ -1006,15 +798,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
-
-
             }
             else if (myNumber == 10)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X >= this.turning.X)
@@ -1029,15 +817,11 @@ namespace Traffic_Light_Simulation
                     {
                         // RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
-
-
             }
             else if (myNumber == 11)
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X >= this.turning.X)
@@ -1048,16 +832,11 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
-
                 }
-
-
             }
             else  // lane num 12
             {
-
                 for (int x = 0; x < listOfCars.Count; x++)
                 {
                     if (listOfCars[x].pos.X >= this.turning.X)
@@ -1072,16 +851,10 @@ namespace Traffic_Light_Simulation
                     {
                         //RemoveCar(listOfCars[x]);
                         listOfCars[x].setPosition(this.startPoint);
-                        //AddCar(1);
                     }
                 }
+            }            
 
-
-            }
-             
-
-        }
-
-        
+        }        
     }
 }

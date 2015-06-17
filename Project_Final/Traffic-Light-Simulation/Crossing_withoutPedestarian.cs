@@ -15,21 +15,12 @@ namespace Traffic_Light_Simulation
 
         }
 
-        
-    /*    public  override void paintSelf(System.Drawing.Graphics gr)
-        {
-            throw new NotImplementedException();
-        }*/
         /// <summary>
         /// creates 4 groups of lanes
         /// </summary>
         public void createGroup(Point pos)
         {
-            /*  if()//  
-              {
-
-              }*/
-
+            throw new NotImplementedException();
         }
     }
 }

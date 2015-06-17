@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Traffic_Light_Simulation
 {
-    class Traffic
+    class Simulation
     {
         public List<Crossing> traficsrossings = new List<Crossing>();
         public Rectangle[] myrectangles = new Rectangle [12];
@@ -20,7 +20,7 @@ namespace Traffic_Light_Simulation
         /// This is the constructor of the traffic class
         /// </summary>
         /// <param name="crossings">This is the list of crossings contained in a traffic simulation</param>
-        public Traffic(String nm)
+        public Simulation(String nm)
         {
             this.name = nm;
             int initialX = 5;
@@ -42,11 +42,6 @@ namespace Traffic_Light_Simulation
                 initialX = 5;
                 
             }
-            
-           
-            //loop to add the lis
-            /*
-            */
         }
         
 
@@ -59,12 +54,6 @@ namespace Traffic_Light_Simulation
         
         public bool addCrossing(Crossing crossing, Point pt)
         {
-           
-            //checks if no overlap
-        
-            
-            //listOfCrossings.Add();
-            // calls incomingandoutgoingcar(created crossing)
             if (traficsrossings.Count == 0)
             {
                 traficsrossings.Add(crossing);
@@ -79,25 +68,16 @@ namespace Traffic_Light_Simulation
                     if (pt == traficsrossings[x].GetRectangle().Location)
                     {
                        // MessageBox.Show("the selected area have crossing, please select other place");
-                        //dont put windows form bojects(msgs) here coz it might be used by other tools
-                        return false;
-
+                       return false;
                     }
                 }
-                    
 
-               
-               
                traficsrossings.Add(crossing);
                findNeighbour(crossing);
-                        return true;
-                    
-
-
-                
+               return true;
             }
-            //return true;
         }
+
         /// <summary>
         /// This method removes a crossing from the traffic system 
         /// </summary>
@@ -126,22 +106,14 @@ namespace Traffic_Light_Simulation
         {
             for (int x = 0; x < traficsrossings.Count; x++)
             {
-
-
                 traficsrossings[x].BeGreen(index);
-
-                // ourtraffic.traficsrossings[x].moveincoming();
-
-
             }
         }
         /// <summary>
         /// This method will be called to stop a simulation that is running
-        /// </summary>
-        
+        /// </summary> 
         public void stopSimulation()
-        {
-            
+        {            
         }
          
         /// <summary>
@@ -152,12 +124,14 @@ namespace Traffic_Light_Simulation
         {
             return true;
         }
+
         /// <summary>
         /// This method is called to show the statistics that had initially been saved
         /// </summary>
         public void showStatistics()
         {
         }
+
         /// <summary>
         /// This method will be used to adjust the time for a particular traffic light
         /// </summary>
@@ -167,12 +141,9 @@ namespace Traffic_Light_Simulation
        
         public void  adjustCrossingLight(Point position, int value, string group)
         {
-            //search for crossing from list with that position
-            
-           
             //listOfCrossings[position].AdjustTime(group, value);
-
         }
+
         /// <summary>
         /// This method will be used to adjust the car for a particular lane
         /// </summary>
@@ -181,12 +152,9 @@ namespace Traffic_Light_Simulation
         /// <param name="point">This is the position of the lane in the list where cars is to be set</param>
         public void adjustCrossingCar(Point position, int value, int lane)
         {
-            //search for crossing from list with that position
-
             // listOfCrossings[position].AdjustNrOfCars(Lane tobeedited, value);
-            
-
         }
+
         /// <summary>
         /// This method will be used to increase the size of the objects in a simulation
         /// </summary>
@@ -195,6 +163,7 @@ namespace Traffic_Light_Simulation
         {
             calculatePosition(point);
         } 
+
         /// <summary>
         /// This method will be used to find the position of a point(that the user provides) on the grid 
         /// </summary>
@@ -209,14 +178,14 @@ namespace Traffic_Light_Simulation
         public bool checkOverlap(Point point)
         {
             calculatePosition(point);
-            //first calls calculate position method and then check if that cell is empty or not
             return false;
         }
+
         public void highlightSelectedCell(Point point)
         {
             calculatePosition(point);
-            //calculate the position and mark the cell as a selected with some painting
         }
+
         /// <summary>
         /// This method paints the list of crossings
         /// </summary>
@@ -229,6 +198,7 @@ namespace Traffic_Light_Simulation
             }
           
         }
+
         /// <summary>
         /// a method which checks the neighbours of a given crossing corresponding to their direction
         /// </summary>
@@ -244,15 +214,11 @@ namespace Traffic_Light_Simulation
                 {
                     currentCrossing.myneighbours.Insert(0, traficsrossings[x]);
                     // to add for the other existing neghbour
-
-                   
-                   traficsrossings[x].myneighbours.Insert(2, currentCrossing);
-                    
+                   traficsrossings[x].myneighbours.Insert(2, currentCrossing);           
                    
                 }
                 //adding east
                 else if (currentCrossing.position.X + currentCrossing.crossingrect.Width == traficsrossings[x].position.X && currentCrossing.position.Y == traficsrossings[x].position.Y)
-   
                 {
                     currentCrossing.myneighbours.Insert(1, traficsrossings[x]);
                    
@@ -260,15 +226,13 @@ namespace Traffic_Light_Simulation
                 }
                 // adding south
                 else if (currentCrossing.position.Y + currentCrossing.crossingrect.Height == traficsrossings[x].position.Y && currentCrossing.position.X == traficsrossings[x].position.X)
-   
                 {
                     currentCrossing.myneighbours.Insert(2, traficsrossings[x]);
                    
                     traficsrossings[x].myneighbours.Insert(0, currentCrossing);
                 }
                   //  adding west
-                else if (currentCrossing.position.X - currentCrossing.crossingrect.Width == traficsrossings[x].position.X && currentCrossing.position.Y == traficsrossings[x].position.Y)
-   
+                else if (currentCrossing.position.X - currentCrossing.crossingrect.Width == traficsrossings[x].position.X && currentCrossing.position.Y == traficsrossings[x].position.Y)   
                 {
                     currentCrossing.myneighbours.Insert(3, traficsrossings[x]);
                    
@@ -278,6 +242,7 @@ namespace Traffic_Light_Simulation
             }
             
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -285,8 +250,6 @@ namespace Traffic_Light_Simulation
         public void incomingAndOutgoingcar(Crossing currentcrossing)
         {
             // findNeighbour(current);
-            //it will call the function NrOfOutgoingCar and divideincomingCarsInRatio of the current and neighbour crossings as needed
-
         }
 
         /// <summary>
@@ -296,8 +259,8 @@ namespace Traffic_Light_Simulation
         /// <returns>cell</returns>
         public Rectangle getRectangle(Point pt)
         {
-
             Rectangle temporect = new Rectangle();
+
             for (int i = 0; i < myrectangles.Length; i++)
             {
                 if (myrectangles[i].Location == pt)

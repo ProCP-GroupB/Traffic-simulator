@@ -261,3 +261,6 @@ D:\Fontys Classes\ProCP\Trafficlighsystem last group\Traffic-Light-Simulation\ob
 D:\Fontys Classes\ProCP\Trafficlighsystem last group\Traffic-Light-Simulation\obj\Debug\Traffic_Light_Simulation.TrafficSimulation_GUI.resources
 D:\Fontys Classes\ProCP\Trafficlighsystem last group\Traffic-Light-Simulation\obj\Debug\Traffic_Light_Simulation.Properties.Resources.resources
 D:\Fontys Classes\ProCP\Trafficlighsystem last group\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.csproj.GenerateResource.Cache
+D:\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\bin\Debug\Traffic-Light-Simulation.exe.config
+D:\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.exe
+D:\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.pdb

@@ -15,7 +15,7 @@ namespace Traffic_Light_Simulation
     public partial class TrafficSimulation_GUI : Form
     {
         Graphics ourgr;
-        Traffic ourtraffic;
+        Simulation ourtraffic;
         
         Point ptclicked; //to select a point clicked
         Point pointselected;
@@ -28,12 +28,11 @@ namespace Traffic_Light_Simulation
         float scaleFactor = 1.5f;       // Scale factor for the zooming.
 
        //private PictureBox[] pb = new PictureBox[1];
-
                                
         public TrafficSimulation_GUI()
         {
             InitializeComponent();
-            ourtraffic = new Traffic("CSharp City");
+            ourtraffic = new Simulation("CSharp City");
 
             // Calculate size of zoom box.
             this.zoomPB.Height = (int)(this.OurTrafficPBox.Height * scaleFactor);
@@ -112,7 +111,6 @@ namespace Traffic_Light_Simulation
             {
                 if (rectangleisselected == true)
                 {
-
                     Crossing mycrossing = new Crossing_WithPedestarian(workingrect, OurtrafficImages.Images[1],"with-pedestrian");
 
                     if (ourtraffic.addCrossing(mycrossing, pointselected))
@@ -122,12 +120,10 @@ namespace Traffic_Light_Simulation
                         MessageBox.Show("the selected area have crossing, please select other place");
                     // OurTrafficPBox.Refresh();
                 }
-
-
-
                 else
                     MessageBox.Show("select a place first");
             }
+
             else
             {
                 MessageBox.Show("Simulation is Running,Stop it First");
@@ -153,9 +149,7 @@ namespace Traffic_Light_Simulation
         {
             simulationRunning = true;
             timertraffic.Enabled = true;
-            GroupTimer.Enabled = true;
-            
-           
+            GroupTimer.Enabled = true;         
 
         }
 
@@ -163,8 +157,6 @@ namespace Traffic_Light_Simulation
         {
             //must select the grid and then when condition is fullfilled
             panel_maximize.Visible = true;
-
-            //must do the painting  X3
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -174,22 +166,17 @@ namespace Traffic_Light_Simulation
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-     
+        {     
             ourgr = e.Graphics;
             Pen myblackpen = new Pen(Color.Black);
             myblackpen.Width = 3;
             
-            
             for (int x = 0; x < ourtraffic.myrectangles.Length; x++)
-            {
-               
-                ourgr.DrawRectangles(myblackpen,ourtraffic.myrectangles);
-              
+            {               
+                ourgr.DrawRectangles(myblackpen,ourtraffic.myrectangles);              
             }
 
             //to paint the seletion
-
             if(rectangleisselected==true)
             {
                 Pen myselctionpen = new Pen(Color.Aqua);
@@ -199,10 +186,7 @@ namespace Traffic_Light_Simulation
             
             // to paint the crossing
              ourtraffic.paintAllCrossing(ourgr);
-            //ourgr.DrawImage(OurtrafficImages.Images[0], workingrect.Location);
-
-
-            
+            //ourgr.DrawImage(OurtrafficImages.Images[0], workingrect.Location);            
            
         }
 
@@ -217,7 +201,6 @@ namespace Traffic_Light_Simulation
 
         private void button2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void OurTrafficPBox_MouseClick(object sender, MouseEventArgs e)
@@ -231,8 +214,8 @@ namespace Traffic_Light_Simulation
             OurTrafficPBox.Invalidate();
            // OurTrafficPBox.Refresh();
 
-
         }
+
         /// <summary>
         /// return the rectangle position
         /// </summary>
@@ -252,7 +235,6 @@ namespace Traffic_Light_Simulation
             {
                 if (rectangleisselected == true)
                 {
-
                     Crossing mycrossing = new Crossing_withoutPedestarian(workingrect, OurtrafficImages.Images[0],"without-pedestrian");
 
                     if (ourtraffic.addCrossing(mycrossing, pointselected))
@@ -311,22 +293,16 @@ namespace Traffic_Light_Simulation
 
         private void OurTrafficPBox_MouseMove(object sender, MouseEventArgs e)
         {
-            //PictureBox[] pba = new PictureBox[10];
             string mm = "(" + e.X.ToString() + "," + e.Y.ToString() + ")";
             this.labelShow.Text = mm;
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-           ourtraffic.startSimulation(index);
-            
+        {            
+           ourtraffic.startSimulation(index);           
 
-            OurTrafficPBox.Invalidate();
-            zoomPB.Invalidate();
-
-            
+           OurTrafficPBox.Invalidate();
+           zoomPB.Invalidate();                     
            
 
         }
@@ -353,17 +329,16 @@ namespace Traffic_Light_Simulation
 
         private void zoomPB_Paint(object sender, PaintEventArgs e)
         {
-            // Grab teh graphicz.
+            // Grab the graphicz.
             Graphics ourzoomgr = e.Graphics;
             
-            // Draw teh traffic light at scalez.
+            // Draw the traffic light at scalez.
             ourtraffic.drawZoom(ourzoomgr, this.pointselected, scaleFactor);
 
 
-            // Reposition teh box to show teh traffic light.
+            // Reposition the box to show the traffic light.
             this.zoomPB.Location = new Point((int)(-this.pointselected.X * scaleFactor), (int)(-this.pointselected.Y * scaleFactor));
         
-            // Dehbugz
             this.Text = this.pointselected.ToString();
         }
 
