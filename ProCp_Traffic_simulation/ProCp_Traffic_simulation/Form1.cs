@@ -252,30 +252,31 @@ namespace ProCp_Traffic_simulation
                 simulation = new Simulation();
                 Crossing crossing = new Crossing(p.BackgroundImage,5,rectanglesWE,rectanglesNS);
                 simulation.AddCrossing(crossing);
-                myRect = new Rectangle(8, 77, 8, 8);
-                myCar = new Car(Direction.West, myRect);
+                //myRect = new Rectangle(8, 77, 8, 8);
+                //myCar = new Car(Direction.West, myRect);
+                simulation.Start();
                 timerTest.Start();
-                ThreadStart thRef = new ThreadStart(myCar.Move);
-                carTest = new Thread(thRef);
+                //ThreadStart thRef = new ThreadStart(myCar.Move);
+                //carTest = new Thread(thRef);
 
                 //Makes a new Group 
-                Group group1 = new Group("WestEast",rectanglesWE);
-                group[0] = group1; 
-                group[0].AddTrafficLight();
+                //Group group1 = new Group("WestEast",rectanglesWE);
+                //group[0] = group1; 
+                //group[0].AddTrafficLight();
                 
-                Group group2 = new Group("NorthSouth", rectanglesNS);
-                group[1] = group2;
-                group[1].AddTrafficLight();
+                //Group group2 = new Group("NorthSouth", rectanglesNS);
+                //group[1] = group2;
+                //group[1].AddTrafficLight();
                 
-                carTest.Start();
+                //carTest.Start();
                
             }
-            if (simulation.simulationRunning == false)
-            {
-                simulation.Start();
-            }
-            else
-                MessageBox.Show("Simulation is running");
+            //if (simulation.simulationRunning == false)
+            //{
+            //    simulation.Start();
+            //}
+            //else
+            //    MessageBox.Show("Simulation is running");
 
             //TESTING CAR MOVEMENT          
         }
@@ -287,7 +288,7 @@ namespace ProCp_Traffic_simulation
 
         private void timerTest_Tick(object sender, EventArgs e)
         {
-            if (!myCar.toStop)
+            if (simulation.isRunning)
             {
                 label1.Text = "" + stopWatch.Elapsed;
                 gr = Graphics.FromImage(DrawArea);

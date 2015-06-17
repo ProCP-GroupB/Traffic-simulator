@@ -52,9 +52,9 @@ namespace ProCp_Traffic_simulation
         /// <summary>
         /// Draws the car on the screen as rectangle
         /// </summary>
-        public Graphics DrawCar()
+        public void DrawCar(Graphics gr)
         {
-            throw new System.NotImplementedException();
+            gr.FillEllipse(Brushes.Black, rect);
         }
 
         /// <summary>
