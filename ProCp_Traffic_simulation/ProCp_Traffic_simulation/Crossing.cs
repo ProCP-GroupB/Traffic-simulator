@@ -25,7 +25,7 @@ namespace ProCp_Traffic_simulation
         public int NrOfCars{get;set;}
 
 
-        public Crossing(Image image, int numOfCars)
+        public Crossing(Image image, int numOfCars, Rectangle[] rectWE, Rectangle[] rectNS)
         {
            // this.crossingNumber = CrossingNumber;
             Image = image;
@@ -33,12 +33,26 @@ namespace ProCp_Traffic_simulation
             //Turningpoints = point;
             NrOfCars = numOfCars;
 
+            groups = new List<Group>();
+
+            groups.Add(new Group("WestEast",rectWE));
+            groups.ElementAt(0).AddTrafficLight();
+            groups.Add(new Group("NorthSouth", rectNS));
+            groups.ElementAt(1).AddTrafficLight();
+
         }
 
 
         public void setCrossing()
         {
-
+            for (int i = 0; i < NrOfCars; i++)
+            {
+                foreach (Group temp in groups)
+                {
+                    temp.AddTraffic();
+                }
+            }
+        
         }
 
         public List<Group> Groups
@@ -58,16 +72,9 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         public void ChangeTrafficLight(EventArgs e)
         {
-            LightColor value = LightColor.Red;
-            if (value == LightColor.Red)
+            foreach (Group temp in groups)
             {
-
-                trafficlight.paintgreen();
-
-            }
-            else
-            {
-                trafficlight.painttoRed();
+                temp.ChangeLight();
             }
 
 

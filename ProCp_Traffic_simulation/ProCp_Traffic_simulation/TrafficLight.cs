@@ -15,7 +15,7 @@ namespace ProCp_Traffic_simulation
         Rectangle[] rectangles = new Rectangle[1];
         private Rectangle lights;
         public SolidBrush b;
-        LightColor light;
+        public LightColor light;
         Graphics gr;
         Bitmap DrawArea = new Bitmap(150, 150);
         

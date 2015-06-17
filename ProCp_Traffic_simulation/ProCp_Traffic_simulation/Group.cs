@@ -12,18 +12,34 @@ namespace ProCp_Traffic_simulation
         private List<Lane> listOfLanes;
         private List<TrafficLight> listOfLights;
         private Rectangle[] rectangle = new Rectangle[2];
+        bool toGreen = true;
 
         /// <summary>
         /// Stops the cars and changes the state of the Traffic Lights
         /// </summary>
-        public event EventHandler ChangeLight;
-         protected virtual void onChangeLight(EventArgs e)
+        //public event EventHandler ChangeLight;
+         public void ChangeLight()
         {
-
-            EventHandler handler = ChangeLight;
-            if (handler != null)
+            
+            foreach (TrafficLight temp in listOfLights)
             {
-                handler(this, e);
+                if (temp.light == LightColor.Red)
+                {
+                    temp.paintgreen();
+                }
+                else if (temp.light == LightColor.Green)
+                {
+                    toGreen = false;
+                    temp.painttoRed();
+                }
+            }
+            
+            foreach (Lane temp in listOfLanes)
+            {
+                if (temp.isGreen && !toGreen)
+                    temp.isGreen = false;
+                else if(!temp.isGreen && toGreen)
+                    temp.isGreen = true;
             }
         }
 
@@ -49,7 +65,7 @@ namespace ProCp_Traffic_simulation
         /// </summary>
         /// <param name="Name"></param>
         /// <param name="rect"></param>
-        /// <example>Name = westeast / northsouth</example>
+        /// <remarks>Name = WestEast/NorthSouth</remarks>
         public Group(string Name, Rectangle[] rect)
         {
             this.name = Name;
@@ -89,7 +105,7 @@ namespace ProCp_Traffic_simulation
             }
         }
 
-        public void onChangeLane(Lane lane, Car car)
+        public void onChangeLane(Lane lane, ref Car car)
         {
             foreach (Lane temp in listOfLanes)
             {
@@ -121,6 +137,47 @@ namespace ProCp_Traffic_simulation
             listOfLights.Add(light);
             listOfLights.Add(lightOpposite);
 
+        }
+
+        /// <summary>
+        /// Adds cars to each lane
+        /// </summary>
+        public void AddTraffic()
+        {
+            foreach (Lane temp in listOfLanes)
+            {
+                if(temp.isFeeder)
+                {
+                    switch (temp.getDirection.ToString().ToLower())
+                    {
+                        case "west":
+                            temp.AddCar(new Car(Direction.West, new Rectangle(0, 77, 8, 8)));
+                            break;
+                        case "westsouth":
+                            temp.AddCar(new Car(Direction.WestSouth, new Rectangle(0, 85, 8, 8)));
+                            break;
+                        case "east":
+                            temp.AddCar(new Car(Direction.East, new Rectangle(150, 68, 8, 8)));
+                            break;
+                        case "eastnorth":
+                            temp.AddCar(new Car(Direction.EastNorth, new Rectangle(150, 58, 8, 8)));
+                            break;
+                        case "north":
+                            temp.AddCar(new Car(Direction.North, new Rectangle(66, 0, 8, 8)));
+                            break;
+                        case "northwest":
+                            temp.AddCar(new Car(Direction.NorthWest, new Rectangle(56, 0, 8, 8)));
+                            break;
+                        case "south":
+                            temp.AddCar(new Car(Direction.South, new Rectangle(76, 150, 8, 8)));
+                            break;
+                        case "southeast":
+                            temp.AddCar(new Car(Direction.SouthEast, new Rectangle(86, 150, 8, 8)));
+                            break;
+                    }
+                }
+            }
+            
         }
     }
 }

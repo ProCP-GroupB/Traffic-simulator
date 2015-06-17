@@ -33,7 +33,7 @@ namespace ProCp_Traffic_simulation
         public bool isFeeder;
 
         public event LaneHandler toChangeLane;
-        public delegate void LaneHandler(Lane lane, Car car);
+        public delegate void LaneHandler(Lane lane, ref Car car);
 
         /// <summary>
         /// Returns the endPoint of a Lane
@@ -170,15 +170,15 @@ namespace ProCp_Traffic_simulation
             listOfCars.Remove(car);
             car.Direction = dir;
             car.toChangeDirection -= new Car.DirectionHandler(onChangeDirection);
-            toChangeLane(this, car);
+            toChangeLane(this, ref car);
         }
 
         /// <summary>
-        /// Adds an existing car comming from a neighbouring lane
+        /// Changes the isGreen value according to the traffic light's color
         /// </summary>
-        public void IncomingCar()
+        public void setGreen(List<TrafficLight> trafficLights)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         /// <summary>

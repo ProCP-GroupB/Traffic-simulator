@@ -21,8 +21,8 @@ namespace ProCp_Traffic_simulation
         Thread carTest;
         Group[] group = new Group[2];
         //Rectagles for the groups
-        Rectangle[] rectangles = new Rectangle[2];
-        Rectangle[] rectangles2 = new Rectangle[2];
+        Rectangle[] rectanglesWE = new Rectangle[2];
+        Rectangle[] rectanglesNS = new Rectangle[2];
 
         Graphics gr;
         List<PictureBox> activatedpb;
@@ -36,11 +36,11 @@ namespace ProCp_Traffic_simulation
             DrawArea = new Bitmap(pbTile1.Size.Width, pbTile1.Size.Height);
             activatedpb = new List<PictureBox>();
 
-            rectangles[0] = new Rectangle(100,35,15,15);
-            rectangles[1] = new Rectangle(35,100,15,15);
+            rectanglesWE[0] = new Rectangle(100,35,15,15);
+            rectanglesWE[1] = new Rectangle(35,100,15,15);
 
-            rectangles2[0] = new Rectangle(35, 35, 15, 15);
-            rectangles2[1] = new Rectangle(100, 100, 15, 15);
+            rectanglesNS[0] = new Rectangle(35, 35, 15, 15);
+            rectanglesNS[1] = new Rectangle(100, 100, 15, 15);
         }
 
         public FileHelper FileHelper
@@ -250,7 +250,7 @@ namespace ProCp_Traffic_simulation
                 p.Image = DrawArea;
 
                 simulation = new Simulation();
-                Crossing crossing = new Crossing(p.BackgroundImage,5);
+                Crossing crossing = new Crossing(p.BackgroundImage,5,rectanglesWE,rectanglesNS);
                 simulation.AddCrossing(crossing);
                 myRect = new Rectangle(8, 77, 8, 8);
                 myCar = new Car(Direction.West, myRect);
@@ -259,11 +259,11 @@ namespace ProCp_Traffic_simulation
                 carTest = new Thread(thRef);
 
                 //Makes a new Group 
-                Group group1 = new Group("Left-Right",rectangles);
+                Group group1 = new Group("WestEast",rectanglesWE);
                 group[0] = group1; 
                 group[0].AddTrafficLight();
-
-                Group group2 = new Group("Top-Bottom", rectangles2);
+                
+                Group group2 = new Group("NorthSouth", rectanglesNS);
                 group[1] = group2;
                 group[1].AddTrafficLight();
                 
