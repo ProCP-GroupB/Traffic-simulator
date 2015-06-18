@@ -279,17 +279,6 @@ namespace Traffic_Light_Simulation
                 listOfLanes[i].paintSelf(gr);               
             }           
         }
-
-       /// <summary>
-       /// This method paint a crossing on separate graphics than the traffic
-       /// </summary>
-        /// <param name="gr">The graphics to that the crossing should be painted on</param>
-       /// <param name="x"> the size that every parameter of the objects should change</param>
-        public void paintBigger(Graphics gr, int x)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// creates 4 groups of lanes, and if type2 it adds one more
         /// </summary>

@@ -17,13 +17,6 @@ namespace Traffic_Light_Simulation
         {
 
         }     
-            
-        /// <summary>
-        /// creates 5 groups of lanes
-        /// </summary>
-        public void createGroup(Point pos)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

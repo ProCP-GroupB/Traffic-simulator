@@ -264,3 +264,13 @@ D:\Fontys Classes\ProCP\Trafficlighsystem last group\Traffic-Light-Simulation\ob
 D:\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\bin\Debug\Traffic-Light-Simulation.exe.config
 D:\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.exe
 D:\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.pdb
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\bin\Debug\Traffic-Light-Simulation.exe.config
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.exe
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.pdb
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic_Light_Simulation.TrafficSimulation_GUI.resources
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic_Light_Simulation.Properties.Resources.resources
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic-Light-Simulation.csproj.GenerateResource.Cache
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\bin\Debug\Traffic-Light-Simulation.exe
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\bin\Debug\Traffic-Light-Simulation.pdb
+C:\Users\Stoyan\Documents\GitHub\Traffic-simulator\Project_Final\Traffic-Light-Simulation\obj\Debug\Traffic_Light_Simulation.Resources.resources

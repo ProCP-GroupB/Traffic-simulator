@@ -22,6 +22,10 @@ namespace Traffic_Light_Simulation
         Rectangle workingrect;
         bool rectangleisselected = false;  // for painting purpose
         bool simulationRunning = false;  //to know either simulation is running or not
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
+
 
         int index = 0;
 
@@ -32,11 +36,12 @@ namespace Traffic_Light_Simulation
         public TrafficSimulation_GUI()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            panel1.Controls.Clear();
             ourtraffic = new Simulation("CSharp City");
-
-            // Calculate size of zoom box.
-            this.zoomPB.Height = (int)(this.OurTrafficPBox.Height * scaleFactor);
-            this.zoomPB.Width = (int)(this.OurTrafficPBox.Width * scaleFactor);
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(groupBox2);
+            panel1.Controls.Add(button1);
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,13 +160,12 @@ namespace Traffic_Light_Simulation
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            //must select the grid and then when condition is fullfilled
-            panel_maximize.Visible = true;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.panel_maximize.Visible = false;
+            
             
         }
 
@@ -293,8 +297,6 @@ namespace Traffic_Light_Simulation
 
         private void OurTrafficPBox_MouseMove(object sender, MouseEventArgs e)
         {
-            string mm = "(" + e.X.ToString() + "," + e.Y.ToString() + ")";
-            this.labelShow.Text = mm;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -302,7 +304,7 @@ namespace Traffic_Light_Simulation
            ourtraffic.startSimulation(index);           
 
            OurTrafficPBox.Invalidate();
-           zoomPB.Invalidate();                     
+                     
            
 
         }
@@ -334,10 +336,6 @@ namespace Traffic_Light_Simulation
             
             // Draw the traffic light at scalez.
             ourtraffic.drawZoom(ourzoomgr, this.pointselected, scaleFactor);
-
-
-            // Reposition the box to show the traffic light.
-            this.zoomPB.Location = new Point((int)(-this.pointselected.X * scaleFactor), (int)(-this.pointselected.Y * scaleFactor));
         
             this.Text = this.pointselected.ToString();
         }
@@ -346,8 +344,36 @@ namespace Traffic_Light_Simulation
         {
 
         }
+        //Window Movement Events------------------------------------------------------------------------------------------
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
 
-       
-       
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void panel1_Move(object sender, EventArgs e)
+        {
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
     }
 }
